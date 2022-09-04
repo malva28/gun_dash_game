@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/crate.obj-0cf5b572141bfbd0eb66f2c00b972cfe.mesh"
+
+[deps]
+
+files=[ "res://.import/crate.obj-0cf5b572141bfbd0eb66f2c00b972cfe.mesh" ]
+
+source_file="res://assets/cratesandbarrel/crate.obj"
+dest_files=[ "res://.import/crate.obj-0cf5b572141bfbd0eb66f2c00b972cfe.mesh", "res://.import/crate.obj-0cf5b572141bfbd0eb66f2c00b972cfe.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286
