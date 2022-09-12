@@ -14,7 +14,7 @@ albedo_texture = ExtResource( 2 )
 [node name="Spatial" type="Spatial"]
 
 [node name="MainChara" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45245, -0.288546, -3.56935 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.257282, -0.236335, -3.70847 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.15268, 2.45198, -0.637196 )
@@ -33,4 +33,4 @@ mesh = SubResource( 2 )
 material/0 = SubResource( 3 )
 
 [node name="barrel" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.43976, -2.25417, -3.81467 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.91724, -2.02237, -3.68901 )
