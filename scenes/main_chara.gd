@@ -8,6 +8,8 @@ const SPEED = 2
 const JUMP_SPEED = 2
 const GRAVITY = 0.1
 
+const bulletPath = preload("res://scenes/bullet.tscn")
+
 var z_distance = 4 # distancia de la camara a Z
 
 onready var arm = $arm
@@ -37,7 +39,7 @@ func _physics_process(delta):
 	
 	velocity.x = move_toward(velocity.x, move_input * SPEED, ACCELERATION * delta)
 	
-	velocity.y -= GRAVITY
+	velocity.y -= GRAVITY  
 	
 	if is_on_floor() and Input.is_action_just_pressed("jump"):
 		velocity.y = +JUMP_SPEED
@@ -61,5 +63,11 @@ func _physics_process(delta):
 func _shoot_process(angle):
 	var y_movement = -1 * SHOOT_ACCEL * sin(angle)
 	var x_movement = -1 * SHOOT_ACCEL * cos(angle)
+	var bullet = bulletPath.instance()
+	
+	get_parent().add_child(bullet)
+	bullet.position = $arm/Position3D.
+	bullet.velocity = get_viewport().get_mouse_position() - bullet.position
+	
 	return Vector2(x_movement, y_movement)
 	

@@ -26,5 +26,8 @@ texture = ExtResource( 1 )
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.344543, -0.00298125, -0.00914454 )
 skeleton = NodePath("../..")
 
+[node name="Position3D" type="Position3D" parent="arm"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.412949, -0.0720515, -0.180742 )
+
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4 )
