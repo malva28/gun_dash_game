@@ -1,5 +1,7 @@
 extends KinematicBody
 
+export(PackedScene) var Bullet
+
 var velocity = Vector3()
 
 const  ACCELERATION = 10
@@ -14,6 +16,8 @@ var z_distance = 4 # distancia de la camara a Z
 
 onready var arm = $arm
 onready var camera = $Camera
+onready var bullet_spawn = $arm/BulletSpawn
+
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -58,16 +62,19 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("Disparo"):
 		velocity.x = +shoot_momentum.x
 		velocity.y = +shoot_momentum.y
+		_disparo()
 	
 
 func _shoot_process(angle):
 	var y_movement = -1 * SHOOT_ACCEL * sin(angle)
 	var x_movement = -1 * SHOOT_ACCEL * cos(angle)
-	var bullet = bulletPath.instance()
-	
-	get_parent().add_child(bullet)
-	bullet.position = $arm/Position3D.
-	bullet.velocity = get_viewport().get_mouse_position() - bullet.position
 	
 	return Vector2(x_movement, y_movement)
+	
+func _disparo():
+	var bullet = Bullet.instance()
+	get_parent().add_child(bullet)
+	print(bullet_spawn.transform)
+	bullet.global_transform.origin = bullet_spawn.transform.origin
+	#bullet.velocity = get_viewport().get_mouse_position() - bullet.position
 	
