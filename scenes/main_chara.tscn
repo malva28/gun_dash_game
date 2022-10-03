@@ -27,7 +27,7 @@ tracks/0/keys = {
 "values": [ 1 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Pivot/Sprite3D:texture")
+tracks/1/path = NodePath("Pivot/Sprite3D:hframes")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -36,10 +36,10 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ ExtResource( 1 ) ]
+"values": [ 6 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Pivot/Sprite3D:hframes")
+tracks/2/path = NodePath("Pivot/Sprite3D:texture")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -47,20 +47,8 @@ tracks/2/enabled = true
 tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 6 ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("Pivot/Sprite3D:texture:load_path")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ "res://.import/1 - Agent_Mike_Jump_&_Falling (32 x 32).png-f035b9fd6cc84d7294f563e252392ef3.stex" ]
+"update": 1,
+"values": [ ExtResource( 1 ) ]
 }
 
 [sub_resource type="Animation" id=7]
@@ -150,7 +138,7 @@ resource_name = "jump_begin"
 length = 0.6
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("Pivot/Sprite3D:texture:load_path")
+tracks/0/path = NodePath("Pivot/Sprite3D:hframes")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -159,10 +147,10 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ "res://.import/1 - Agent_Mike_Jump_&_Falling (32 x 32).png-f035b9fd6cc84d7294f563e252392ef3.stex" ]
+"values": [ 2 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("Pivot/Sprite3D:hframes")
+tracks/1/path = NodePath("Pivot/Sprite3D:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -171,10 +159,10 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 2 ]
+"values": [ 0 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("Pivot/Sprite3D:frame")
+tracks/2/path = NodePath("Pivot/Sprite3D:texture")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -183,7 +171,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 0 ]
+"values": [ ExtResource( 7 ) ]
 }
 
 [sub_resource type="Animation" id=6]
@@ -287,14 +275,12 @@ animation = "run"
 [sub_resource type="AnimationNodeStateMachineTransition" id=16]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=17]
-switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=18]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=19]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=20]
-switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=21]
 
@@ -311,7 +297,7 @@ states/run/node = SubResource( 9 )
 states/run/position = Vector2( 260, 296 )
 transitions = [ "idle", "run", SubResource( 10 ), "run", "idle", SubResource( 11 ), "idle", "jump_begin", SubResource( 16 ), "jump_begin", "jump_fall", SubResource( 17 ), "jump_fall", "idle", SubResource( 18 ), "jump_fall", "run", SubResource( 19 ), "run", "jump_begin", SubResource( 20 ), "idle", "jump_fall", SubResource( 21 ), "run", "jump_fall", SubResource( 22 ) ]
 start_node = "idle"
-graph_offset = Vector2( 0, 106.283 )
+graph_offset = Vector2( 0, 102.487 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=13]
 

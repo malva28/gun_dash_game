@@ -79,8 +79,10 @@ func _physics_process(delta):
 	else:
 		if velocity.y > 0:
 			playback.travel("jump_begin")
+			print("begin")
 		else:
 			playback.travel("jump_fall")
+			print("fall")
 		
 	if Input.is_action_pressed("move_right") and not Input.is_action_pressed("move_left"):
 		pivot.scale.x =1
