@@ -14,10 +14,15 @@ const bulletPath = preload("res://scenes/bullet.tscn")
 
 var z_distance = 4 # distancia de la camara a Z
 
+onready var pivot = $Pivot
 onready var arm = $arm
 onready var camera = $Camera
 onready var bullet_spawn = $arm/BulletSpawn
 
+onready var anim_player = $AnimationPlayer
+onready var anim_tree = $AnimationTree
+
+onready var playback = anim_tree.get("parameters/playback")
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -26,7 +31,7 @@ onready var bullet_spawn = $arm/BulletSpawn
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	anim_tree.active = true
 	
 #func _process(delta: float) -> void:
 #	$arm.look_at(get_global_mouse_position())
@@ -63,6 +68,24 @@ func _physics_process(delta):
 		velocity.x = +shoot_momentum.x
 		velocity.y = +shoot_momentum.y
 		_disparo()
+		
+	### Animation logic
+	if is_on_floor():
+# warning-ignore:integer_division
+		if abs(velocity.x) > SPEED/10.0:
+			playback.travel("run")
+		else:
+			playback.travel("idle")
+	else:
+		if velocity.y > 0:
+			playback.travel("jump_begin")
+		else:
+			playback.travel("jump_fall")
+		
+	if Input.is_action_pressed("move_right") and not Input.is_action_pressed("move_left"):
+		pivot.scale.x =1
+	if Input.is_action_pressed("move_left") and not Input.is_action_pressed("move_right"):
+		pivot.scale.x =-1
 	
 
 func _shoot_process(angle):
