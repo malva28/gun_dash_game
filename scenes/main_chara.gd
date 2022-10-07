@@ -1,5 +1,7 @@
 extends KinematicBody
 
+export(PackedScene) var Bullet
+
 var velocity = Vector3()
 
 const  ACCELERATION = 10
@@ -8,10 +10,19 @@ const SPEED = 2
 const JUMP_SPEED = 2
 const GRAVITY = 0.1
 
+const bulletPath = preload("res://scenes/bullet.tscn")
+
 var z_distance = 4 # distancia de la camara a Z
 
+onready var pivot = $Pivot
 onready var arm = $arm
 onready var camera = $Camera
+onready var bullet_spawn = $arm/BulletSpawn
+
+onready var anim_player = $AnimationPlayer
+onready var anim_tree = $AnimationTree
+
+onready var playback = anim_tree.get("parameters/playback")
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -20,7 +31,7 @@ onready var camera = $Camera
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	anim_tree.active = true
 	
 #func _process(delta: float) -> void:
 #	$arm.look_at(get_global_mouse_position())
@@ -37,7 +48,7 @@ func _physics_process(delta):
 	
 	velocity.x = move_toward(velocity.x, move_input * SPEED, ACCELERATION * delta)
 	
-	velocity.y -= GRAVITY
+	velocity.y -= GRAVITY  
 	
 	if is_on_floor() and Input.is_action_just_pressed("jump"):
 		velocity.y = +JUMP_SPEED
@@ -56,10 +67,39 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("Disparo"):
 		velocity.x = +shoot_momentum.x
 		velocity.y = +shoot_momentum.y
+		_disparo()
+		
+	### Animation logic
+	if is_on_floor():
+# warning-ignore:integer_division
+		if abs(velocity.x) > SPEED/10.0:
+			playback.travel("run")
+		else:
+			playback.travel("idle")
+	else:
+		if velocity.y > 0:
+			playback.travel("jump_begin")
+			print("begin")
+		else:
+			playback.travel("jump_fall")
+			print("fall")
+		
+	if Input.is_action_pressed("move_right") and not Input.is_action_pressed("move_left"):
+		pivot.scale.x =1
+	if Input.is_action_pressed("move_left") and not Input.is_action_pressed("move_right"):
+		pivot.scale.x =-1
 	
 
 func _shoot_process(angle):
 	var y_movement = -1 * SHOOT_ACCEL * sin(angle)
 	var x_movement = -1 * SHOOT_ACCEL * cos(angle)
+	
 	return Vector2(x_movement, y_movement)
+	
+func _disparo():
+	var bullet = Bullet.instance()
+	get_parent().add_child(bullet)
+	print(bullet_spawn.transform)
+	bullet.global_transform = bullet_spawn.get_global_transform()
+	#bullet.velocity = get_viewport().get_mouse_position() - bullet.position
 	
