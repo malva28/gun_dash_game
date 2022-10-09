@@ -1,0 +1,56 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://resources/tema_menu.tres" type="Theme" id=1]
+[ext_resource path="res://assets/fonts/Planet-Garlic/PlanetGarlick.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://scenes/ui/main_menu.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+outline_size = 6
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[node name="MarginContainer" type="MarginContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 3 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 50.0
+margin_top = 198.0
+margin_right = 974.0
+margin_bottom = 402.0
+size_flags_horizontal = 5
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_right = 924.0
+margin_bottom = 78.0
+custom_colors/font_color = Color( 0.933333, 0.501961, 0.0784314, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Gun dash"
+align = 1
+
+[node name="Play" type="Button" parent="VBoxContainer"]
+margin_top = 82.0
+margin_right = 924.0
+margin_bottom = 120.0
+custom_colors/font_color = Color( 0.933333, 0.635294, 0.12549, 1 )
+custom_colors/font_color_hover = Color( 0.00784314, 1, 0, 1 )
+text = "Play"
+
+[node name="Credits" type="Button" parent="VBoxContainer"]
+margin_top = 124.0
+margin_right = 924.0
+margin_bottom = 162.0
+custom_colors/font_color = Color( 0.752941, 0.639216, 0.247059, 1 )
+text = "Credits"
+
+[node name="Exit" type="Button" parent="VBoxContainer"]
+margin_top = 166.0
+margin_right = 924.0
+margin_bottom = 204.0
+custom_colors/font_color = Color( 0.572549, 0.380392, 0.0235294, 1 )
+custom_colors/font_color_hover = Color( 0.6, 0.168627, 0.168627, 1 )
+text = "Exit"
