@@ -3,6 +3,7 @@ extends KinematicBody
 export(PackedScene) var Bullet
 
 var velocity = Vector3()
+var hp = 3
 
 const  ACCELERATION = 10
 const SHOOT_ACCEL = 7
@@ -18,6 +19,7 @@ onready var pivot = $Pivot
 onready var arm = $arm
 onready var camera = $Camera
 onready var bullet_spawn = $arm/BulletSpawn
+onready var hud = $CanvasLayer/hud
 
 onready var anim_player = $AnimationPlayer
 onready var anim_tree = $AnimationTree
@@ -79,21 +81,21 @@ func _physics_process(delta):
 	else:
 		if velocity.y > 0:
 			playback.travel("jump_begin")
-			print("begin")
 		else:
 			playback.travel("jump_fall")
-			print("fall")
 		
 	if Input.is_action_pressed("move_right") and not Input.is_action_pressed("move_left"):
 		pivot.scale.x =1
 	if Input.is_action_pressed("move_left") and not Input.is_action_pressed("move_right"):
 		pivot.scale.x =-1
+		
+	
 	
 
 func _shoot_process(angle):
 	var y_movement = -1 * SHOOT_ACCEL * sin(angle)
 	var x_movement = -1 * SHOOT_ACCEL * cos(angle)
-	
+	$Camera
 	return Vector2(x_movement, y_movement)
 	
 func _disparo():
@@ -103,3 +105,8 @@ func _disparo():
 	bullet.global_transform = bullet_spawn.get_global_transform()
 	#bullet.velocity = get_viewport().get_mouse_position() - bullet.position
 	
+
+
+func _on_enemy_body_entered(body):
+	if body.name == "MainChara":
+		hud.hp -= 1
