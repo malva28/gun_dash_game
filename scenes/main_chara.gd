@@ -23,6 +23,7 @@ onready var anim_player = $AnimationPlayer
 onready var anim_tree = $AnimationTree
 
 onready var playback = anim_tree.get("parameters/playback")
+onready var hud = $Control/HUD
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -64,10 +65,16 @@ func _physics_process(delta):
 	var shoot_momentum = _shoot_process(angle)
 	
 	arm.rotation = Vector3(0,0, angle)
-	if Input.is_action_just_pressed("Disparo"):
+	
+	### SI NO QUEDAN BALAS, NO DISPARAR
+	if Input.is_action_just_pressed("Disparo") and hud.reduce_ammo():
 		velocity.x = +shoot_momentum.x
 		velocity.y = +shoot_momentum.y
 		_disparo()
+		
+	### SI ESTA EN EL SUELO, RECARGA
+	if is_on_floor():
+		hud.reload_all()
 		
 	### Animation logic
 	if is_on_floor():
@@ -103,3 +110,4 @@ func _disparo():
 	bullet.global_transform = bullet_spawn.get_global_transform()
 	#bullet.velocity = get_viewport().get_mouse_position() - bullet.position
 	
+		
