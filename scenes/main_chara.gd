@@ -19,13 +19,12 @@ onready var pivot = $Pivot
 onready var arm = $arm
 onready var camera = $Camera
 onready var bullet_spawn = $arm/BulletSpawn
-onready var hud = $CanvasLayer/hud
+onready var hud = $Control/hud
 
 onready var anim_player = $AnimationPlayer
 onready var anim_tree = $AnimationTree
 
 onready var playback = anim_tree.get("parameters/playback")
-onready var hud = $Control/HUD
 
 # Declare member variables here. Examples:
 # var a = 2
