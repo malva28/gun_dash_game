@@ -312,6 +312,9 @@ Bullet = ExtResource( 4 )
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
 shape = SubResource( 1 )
 
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5 )
+
 [node name="arm" type="Spatial" parent="."]
 
 [node name="MeshInstance" parent="arm" instance=ExtResource( 2 )]
@@ -320,9 +323,6 @@ skeleton = NodePath("../..")
 
 [node name="BulletSpawn" type="Position3D" parent="arm"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.464, 0.024, 0 )
-
-[node name="Camera" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 3 )

@@ -11,12 +11,11 @@ var SPEED = 8
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	connect("body_entered", self, "on_body_entered")
 
 func _physics_process(delta):
 	#var collision_info = move_and_collide(velocity.normalized()*delta*speed)
 	translation += SPEED * transform.basis.x * delta
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _on_body_entered(body):
+	print("damn")
