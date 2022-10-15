@@ -31,7 +31,7 @@ func reduce_ammo():
 		used.push_back(used_bullet)
 		print(used_bullet)
 		ammo_count -= 1
-		return ammo_count
+		return true
 	else:
 		return false
 		

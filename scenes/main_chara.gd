@@ -77,6 +77,8 @@ func _physics_process(delta):
 	if is_on_floor():
 		hud.reload_all()
 		
+	
+		
 	### Animation logic
 	if is_on_floor():
 # warning-ignore:integer_division
