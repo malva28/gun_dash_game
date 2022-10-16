@@ -27,6 +27,6 @@ func _on_body_entered(body):
 		print(body.transform.origin)
 		var direction = (transform.origin - body.transform.origin).normalized()
 		#var angle = direction.angle()
-		self.rotation = angle_to(direction)
+		#self.rotation = angle_to(direction)
 		#
 		#translation  += direction * SPEED *  2

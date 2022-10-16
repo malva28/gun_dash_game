@@ -1,0 +1,735 @@
+[gd_scene load_steps=145 format=2]
+
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/Bridge_Arc_4.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_Circle_OneMeter_1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_LBlock_1.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_Triangle_OneMeter_3_R.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_3.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_Mini_2.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_TwoMeter_3.tscn" type="PackedScene" id=7]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_BrokenEdge_OneMeter_1.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_TwoMeter_1.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/WallPanel_3.tscn" type="PackedScene" id=10]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/Ramp_1.tscn" type="PackedScene" id=11]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_OneMeter_5.tscn" type="PackedScene" id=12]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/WallPanel_1.tscn" type="PackedScene" id=13]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_Triangle_OneMeter_4_R.tscn" type="PackedScene" id=14]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/Ramp_2.tscn" type="PackedScene" id=15]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_OneMeter_1.tscn" type="PackedScene" id=16]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_Circle_OneMeter_3.tscn" type="PackedScene" id=17]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/WallPanel_Half_2.tscn" type="PackedScene" id=18]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_Mini_TwoMeter_4.tscn" type="PackedScene" id=19]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_Mini_1.tscn" type="PackedScene" id=20]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/Bridge_Arc_1.tscn" type="PackedScene" id=21]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_Mini_TwoMeter_1.tscn" type="PackedScene" id=22]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_Triangle_1_L.tscn" type="PackedScene" id=23]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_Mini_4.tscn" type="PackedScene" id=24]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_Triangle_OneMeter_1_R.tscn" type="PackedScene" id=25]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_Triangle_OneMeter_1_L.tscn" type="PackedScene" id=26]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_1.tscn" type="PackedScene" id=27]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_2.tscn" type="PackedScene" id=28]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_BrokenEdge_2.tscn" type="PackedScene" id=29]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_Triangle_1_R.tscn" type="PackedScene" id=30]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_LBlock_TwoMeter_1.tscn" type="PackedScene" id=31]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/WallPanel_4.tscn" type="PackedScene" id=32]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_5.tscn" type="PackedScene" id=33]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_BrokenEdge_4.tscn" type="PackedScene" id=34]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_BrokenEdge_3.tscn" type="PackedScene" id=35]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_LBlock_4.tscn" type="PackedScene" id=36]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_TwoMeter_2.tscn" type="PackedScene" id=37]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_LBlock_2.tscn" type="PackedScene" id=38]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/Bridge_Arc_2.tscn" type="PackedScene" id=39]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_OneMeter_2.tscn" type="PackedScene" id=40]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/Post_2.tscn" type="PackedScene" id=41]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_Broken_1.tscn" type="PackedScene" id=42]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_Broken_3.tscn" type="PackedScene" id=43]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_Circle_3.tscn" type="PackedScene" id=44]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_Mini_OneMeter_1.tscn" type="PackedScene" id=45]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_LBlock_3.tscn" type="PackedScene" id=46]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_LBlock_OneMeter_1.tscn" type="PackedScene" id=47]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_Mini_3.tscn" type="PackedScene" id=48]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_TriangleArc_2_L.tscn" type="PackedScene" id=49]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_Triangle_OneMeter_4_L.tscn" type="PackedScene" id=50]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/Post_1.tscn" type="PackedScene" id=51]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_TwoMeter_4.tscn" type="PackedScene" id=52]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_4.tscn" type="PackedScene" id=53]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_Triangle_3_L.tscn" type="PackedScene" id=54]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_BrokenEdge_1.tscn" type="PackedScene" id=55]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/Stairs_2.tscn" type="PackedScene" id=56]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/Post_end_1.tscn" type="PackedScene" id=57]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_TwoMeter_5.tscn" type="PackedScene" id=58]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_Broken_2.tscn" type="PackedScene" id=59]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_TriangleArc_OneMeter_4_L.tscn" type="PackedScene" id=60]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_TriangleArc_4_L.tscn" type="PackedScene" id=61]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/Stairs_1.tscn" type="PackedScene" id=62]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/WallPanel_Half_3.tscn" type="PackedScene" id=63]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/Post_end_2.tscn" type="PackedScene" id=64]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_TriangleArc_3_L.tscn" type="PackedScene" id=65]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/WallPanel_2.tscn" type="PackedScene" id=66]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_TriangleArc_1_L.tscn" type="PackedScene" id=67]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/WallPanel_Half_4.tscn" type="PackedScene" id=68]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_Circle_1.tscn" type="PackedScene" id=69]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/WallPanel_Half_1.tscn" type="PackedScene" id=70]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_Triangle_4_L.tscn" type="PackedScene" id=71]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/Bridge_Arc_3.tscn" type="PackedScene" id=72]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_OneMeter_3.tscn" type="PackedScene" id=73]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_OneMeter_4.tscn" type="PackedScene" id=74]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_Triangle_OneMeter_2_L.tscn" type="PackedScene" id=75]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_Mini_OneMeter_3.tscn" type="PackedScene" id=76]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_Circle_OneMeter_2.tscn" type="PackedScene" id=77]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_TriangleArc_OneMeter_2_L.tscn" type="PackedScene" id=78]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_LBlock_OneMeter_2.tscn" type="PackedScene" id=79]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_Triangle_2_L.tscn" type="PackedScene" id=80]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_Broken_4.tscn" type="PackedScene" id=81]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_Circle_4.tscn" type="PackedScene" id=82]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_LBlock_OneMeter_3.tscn" type="PackedScene" id=83]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_TriangleArc_OneMeter_3_L.tscn" type="PackedScene" id=84]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_BrokenEdge_OneMeter_2.tscn" type="PackedScene" id=85]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_Mini_OneMeter_2.tscn" type="PackedScene" id=86]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_TriangleArc_OneMeter_1_L.tscn" type="PackedScene" id=87]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_Circle_2.tscn" type="PackedScene" id=88]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_Triangle_OneMeter_3_L.tscn" type="PackedScene" id=89]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_Mini_OneMeter_4.tscn" type="PackedScene" id=90]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_BrokenEdge_OneMeter_3.tscn" type="PackedScene" id=91]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_Circle_OneMeter_4.tscn" type="PackedScene" id=92]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_LBlock_OneMeter_4.tscn" type="PackedScene" id=93]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_Mini_TwoMeter_2.tscn" type="PackedScene" id=94]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_BrokenEdge_OneMeter_4.tscn" type="PackedScene" id=95]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_BrokenEdge_TwoMeter_1.tscn" type="PackedScene" id=96]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_TriangleArc_TwoMeter_1_L.tscn" type="PackedScene" id=97]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_Triangle_TwoMeter_1_L.tscn" type="PackedScene" id=98]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_Circle_TwoMeter_1.tscn" type="PackedScene" id=99]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_LBlock_TwoMeter_2.tscn" type="PackedScene" id=100]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_TriangleArc_TwoMeter_2_L.tscn" type="PackedScene" id=101]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_Circle_TwoMeter_2.tscn" type="PackedScene" id=102]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_Triangle_TwoMeter_2_L.tscn" type="PackedScene" id=103]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_Mini_TwoMeter_3.tscn" type="PackedScene" id=104]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_LBlock_TwoMeter_3.tscn" type="PackedScene" id=105]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_BrokenEdge_TwoMeter_2.tscn" type="PackedScene" id=106]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_TriangleArc_TwoMeter_3_L.tscn" type="PackedScene" id=107]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_Triangle_TwoMeter_3_L.tscn" type="PackedScene" id=108]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_Circle_TwoMeter_3.tscn" type="PackedScene" id=109]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_BrokenEdge_TwoMeter_3.tscn" type="PackedScene" id=110]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_LBlock_TwoMeter_4.tscn" type="PackedScene" id=111]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_Circle_TwoMeter_4.tscn" type="PackedScene" id=112]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_Triangle_TwoMeter_4_L.tscn" type="PackedScene" id=113]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_TriangleArc_TwoMeter_4_L.tscn" type="PackedScene" id=114]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_Broken_OneMeter_1.tscn" type="PackedScene" id=115]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_Broken_OneMeter_2.tscn" type="PackedScene" id=116]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_Broken_OneMeter_3.tscn" type="PackedScene" id=117]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_BrokenEdge_TwoMeter_4.tscn" type="PackedScene" id=118]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_Broken_TwoMeter_4.tscn" type="PackedScene" id=119]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_Broken_TwoMeter_1.tscn" type="PackedScene" id=120]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_Broken_OneMeter_4.tscn" type="PackedScene" id=121]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_Broken_TwoMeter_3.tscn" type="PackedScene" id=122]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_Broken_TwoMeter_2.tscn" type="PackedScene" id=123]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_TriangleArc_OneMeter_3_R.tscn" type="PackedScene" id=124]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_TriangleArc_2_R.tscn" type="PackedScene" id=125]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_TriangleArc_3_R.tscn" type="PackedScene" id=126]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_TriangleArc_1_R.tscn" type="PackedScene" id=127]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_TriangleArc_4_R.tscn" type="PackedScene" id=128]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_TriangleArc_OneMeter_1_R.tscn" type="PackedScene" id=129]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_TriangleArc_OneMeter_2_R.tscn" type="PackedScene" id=130]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_Triangle_2_R.tscn" type="PackedScene" id=131]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_TriangleArc_TwoMeter_3_R.tscn" type="PackedScene" id=132]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_Triangle_TwoMeter_2_R.tscn" type="PackedScene" id=133]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_TriangleArc_TwoMeter_1_R.tscn" type="PackedScene" id=134]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_TriangleArc_OneMeter_4_R.tscn" type="PackedScene" id=135]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_TriangleArc_TwoMeter_4_R.tscn" type="PackedScene" id=136]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_TriangleArc_TwoMeter_2_R.tscn" type="PackedScene" id=137]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_Triangle_3_R.tscn" type="PackedScene" id=138]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_Triangle_4_R.tscn" type="PackedScene" id=139]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_Triangle_OneMeter_2_R.tscn" type="PackedScene" id=140]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_Triangle_TwoMeter_4_R.tscn" type="PackedScene" id=141]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_Triangle_TwoMeter_3_R.tscn" type="PackedScene" id=142]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_Triangle_TwoMeter_1_R.tscn" type="PackedScene" id=143]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/Ramp_3.tscn" type="PackedScene" id=144]
+
+[node name="BasicPlatformingTiles" type="Spatial"]
+
+[node name="FloorPanel_1" parent="." instance=ExtResource( 27 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0, -11 )
+skeleton = NodePath("")
+
+[node name="WallPanel_4" parent="." instance=ExtResource( 32 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, -32 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_4" parent="." instance=ExtResource( 53 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, -20 )
+skeleton = NodePath("")
+
+[node name="WallPanel_3" parent="." instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -32 )
+skeleton = NodePath("")
+
+[node name="Post_end_1" parent="." instance=ExtResource( 57 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -14 )
+skeleton = NodePath("")
+
+[node name="Post_1" parent="." instance=ExtResource( 51 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, -12 )
+skeleton = NodePath("")
+
+[node name="Post_end_2" parent="." instance=ExtResource( 64 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -13 )
+skeleton = NodePath("")
+
+[node name="Post_2" parent="." instance=ExtResource( 41 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -12 )
+skeleton = NodePath("")
+
+[node name="WallPanel_1" parent="." instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, -32 )
+skeleton = NodePath("")
+
+[node name="WallPanel_2" parent="." instance=ExtResource( 66 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0, -32 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_5" parent="." instance=ExtResource( 33 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0, -11 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_2" parent="." instance=ExtResource( 28 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, -11 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_3" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -11 )
+skeleton = NodePath("")
+
+[node name="WallPanel_Half_4" parent="." instance=ExtResource( 68 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -31 )
+skeleton = NodePath("")
+
+[node name="WallPanel_Half_3" parent="." instance=ExtResource( 63 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -31 )
+skeleton = NodePath("")
+
+[node name="WallPanel_Half_2" parent="." instance=ExtResource( 18 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -31 )
+skeleton = NodePath("")
+
+[node name="WallPanel_Half_1" parent="." instance=ExtResource( 70 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -31 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_TwoMeter_3" parent="." instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0, -16 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_TwoMeter_4" parent="." instance=ExtResource( 52 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0, -20 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_TwoMeter_5" parent="." instance=ExtResource( 58 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0, -16 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_TwoMeter_1" parent="." instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, -16 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_TwoMeter_2" parent="." instance=ExtResource( 37 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -16 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_OneMeter_1" parent="." instance=ExtResource( 16 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, -14 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_OneMeter_3" parent="." instance=ExtResource( 73 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19, 0, -14 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_OneMeter_4" parent="." instance=ExtResource( 74 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, -20 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_OneMeter_5" parent="." instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0, -14 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_OneMeter_2" parent="." instance=ExtResource( 40 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, -14 )
+skeleton = NodePath("")
+
+[node name="Stairs_1" parent="." instance=ExtResource( 62 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -15 )
+skeleton = NodePath("")
+
+[node name="Ramp_1" parent="." instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, -15 )
+skeleton = NodePath("")
+
+[node name="Stairs_2" parent="." instance=ExtResource( 56 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, -15 )
+skeleton = NodePath("")
+
+[node name="Ramp_2" parent="." instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -15 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_LBlock_1" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -13 )
+skeleton = NodePath("")
+
+[node name="Bridge_Arc_4" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -36 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_TriangleArc_2_L" parent="." instance=ExtResource( 49 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -43 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_Triangle_2_L" parent="." instance=ExtResource( 80 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -36 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_TriangleArc_1_L" parent="." instance=ExtResource( 67 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -43 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_Circle_1" parent="." instance=ExtResource( 69 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -20 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_Broken_1" parent="." instance=ExtResource( 42 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -29 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_BrokenEdge_1" parent="." instance=ExtResource( 55 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -26 )
+skeleton = NodePath("")
+
+[node name="Bridge_Arc_3" parent="." instance=ExtResource( 72 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -36 )
+skeleton = NodePath("")
+
+[node name="Bridge_Arc_2" parent="." instance=ExtResource( 39 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, -36 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_Circle_2" parent="." instance=ExtResource( 88 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -20 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_Mini_1" parent="FloorPanel_Circle_2" instance=ExtResource( 20 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 8 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_Triangle_1_L" parent="FloorPanel_Circle_2" instance=ExtResource( 23 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -16 )
+skeleton = NodePath("")
+
+[node name="Bridge_Arc_1" parent="FloorPanel_Circle_2" instance=ExtResource( 21 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17, 0, -16 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_LBlock_2" parent="FloorPanel_Circle_2" instance=ExtResource( 38 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 7 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_Mini_2" parent="FloorPanel_Circle_2" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 8 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_Broken_2" parent="." instance=ExtResource( 59 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -29 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_BrokenEdge_2" parent="." instance=ExtResource( 29 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -26 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_LBlock_3" parent="." instance=ExtResource( 46 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -13 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_Mini_3" parent="." instance=ExtResource( 48 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -12 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_TriangleArc_3_L" parent="." instance=ExtResource( 65 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -43 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_Circle_3" parent="." instance=ExtResource( 44 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, -20 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_Triangle_3_L" parent="." instance=ExtResource( 54 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -36 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_Broken_3" parent="." instance=ExtResource( 43 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -29 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_BrokenEdge_3" parent="." instance=ExtResource( 35 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -26 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_LBlock_4" parent="." instance=ExtResource( 36 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -13 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_Mini_4" parent="." instance=ExtResource( 24 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -12 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_TriangleArc_4_L" parent="." instance=ExtResource( 61 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -43 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_Circle_4" parent="." instance=ExtResource( 82 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -20 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_Triangle_TwoMeter_3_R" parent="." instance=ExtResource( 142 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 0, -3 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_BrokenEdge_4" parent="." instance=ExtResource( 34 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -26 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_Triangle_4_L" parent="." instance=ExtResource( 71 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -36 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_Broken_4" parent="." instance=ExtResource( 81 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -29 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_LBlock_OneMeter_1" parent="." instance=ExtResource( 47 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, -13 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_Mini_OneMeter_1" parent="." instance=ExtResource( 45 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, -12 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_TriangleArc_OneMeter_1_L" parent="." instance=ExtResource( 87 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -43 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_Circle_OneMeter_1" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -20 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_Triangle_OneMeter_1_L" parent="." instance=ExtResource( 26 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -36 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_BrokenEdge_OneMeter_1" parent="." instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -26 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_LBlock_OneMeter_2" parent="." instance=ExtResource( 79 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -13 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_Mini_OneMeter_2" parent="." instance=ExtResource( 86 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -12 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_TriangleArc_OneMeter_2_L" parent="." instance=ExtResource( 78 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, -43 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_Circle_OneMeter_2" parent="." instance=ExtResource( 77 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, -20 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_Triangle_OneMeter_2_L" parent="." instance=ExtResource( 75 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -36 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_BrokenEdge_OneMeter_2" parent="." instance=ExtResource( 85 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -26 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_LBlock_OneMeter_3" parent="." instance=ExtResource( 83 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, -13 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_Mini_OneMeter_3" parent="." instance=ExtResource( 76 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, -12 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_TriangleArc_OneMeter_3_L" parent="." instance=ExtResource( 84 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, -43 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_Circle_OneMeter_3" parent="." instance=ExtResource( 17 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, -20 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_Triangle_OneMeter_3_L" parent="." instance=ExtResource( 89 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, -36 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_BrokenEdge_OneMeter_3" parent="." instance=ExtResource( 91 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, -26 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_LBlock_OneMeter_4" parent="." instance=ExtResource( 93 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, -13 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_Mini_OneMeter_4" parent="." instance=ExtResource( 90 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, -12 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_TriangleArc_OneMeter_4_L" parent="." instance=ExtResource( 60 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, -43 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_Circle_OneMeter_4" parent="." instance=ExtResource( 92 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -20 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_Triangle_OneMeter_4_L" parent="." instance=ExtResource( 50 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, -36 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_BrokenEdge_OneMeter_4" parent="." instance=ExtResource( 95 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, -26 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_LBlock_TwoMeter_1" parent="." instance=ExtResource( 31 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, -13 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_Mini_TwoMeter_1" parent="." instance=ExtResource( 22 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, -12 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_TriangleArc_TwoMeter_1_L" parent="." instance=ExtResource( 97 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 0, -43 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_Circle_TwoMeter_1" parent="." instance=ExtResource( 99 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -20 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_Triangle_TwoMeter_1_L" parent="." instance=ExtResource( 98 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 0, -36 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_BrokenEdge_TwoMeter_1" parent="." instance=ExtResource( 96 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19, 0, -26 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_LBlock_TwoMeter_2" parent="." instance=ExtResource( 100 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 31, 0, -13 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_Mini_TwoMeter_2" parent="." instance=ExtResource( 94 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 31, 0, -12 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_TriangleArc_TwoMeter_2_L" parent="." instance=ExtResource( 101 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, -43 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_Circle_TwoMeter_2" parent="." instance=ExtResource( 102 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 0, -20 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_Triangle_TwoMeter_2_L" parent="." instance=ExtResource( 103 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, -36 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_BrokenEdge_TwoMeter_2" parent="." instance=ExtResource( 106 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 0, -26 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_LBlock_TwoMeter_3" parent="." instance=ExtResource( 105 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 0, -13 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_Mini_TwoMeter_3" parent="." instance=ExtResource( 104 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 0, -12 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_Triangle_TwoMeter_3_L" parent="." instance=ExtResource( 108 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 0, -36 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_BrokenEdge_TwoMeter_3" parent="." instance=ExtResource( 110 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, -26 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_Triangle_TwoMeter_4_L" parent="." instance=ExtResource( 113 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 0, -36 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_Broken_OneMeter_4" parent="." instance=ExtResource( 121 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, -29 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_Broken_TwoMeter_1" parent="." instance=ExtResource( 120 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, -29 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_Broken_TwoMeter_2" parent="." instance=ExtResource( 123 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 0, -29 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_TriangleArc_1_R" parent="." instance=ExtResource( 127 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -40 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_TriangleArc_4_R" parent="." instance=ExtResource( 128 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -40 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_TriangleArc_OneMeter_3_R" parent="." instance=ExtResource( 124 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, -40 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_TriangleArc_OneMeter_4_R" parent="." instance=ExtResource( 135 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, -40 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_TriangleArc_TwoMeter_1_R" parent="." instance=ExtResource( 134 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 0, -40 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_TriangleArc_TwoMeter_2_R" parent="." instance=ExtResource( 137 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, -40 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_TriangleArc_TwoMeter_3_R" parent="." instance=ExtResource( 132 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 0, -40 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_TriangleArc_TwoMeter_4_R" parent="." instance=ExtResource( 136 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 0, -40 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_Triangle_1_R" parent="." instance=ExtResource( 30 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, -33 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_Triangle_2_R" parent="." instance=ExtResource( 131 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -33 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_Triangle_3_R" parent="." instance=ExtResource( 138 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -33 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_Triangle_4_R" parent="." instance=ExtResource( 139 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, -33 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_Triangle_OneMeter_1_R" parent="." instance=ExtResource( 25 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -33 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_Triangle_OneMeter_2_R" parent="." instance=ExtResource( 140 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.9, 0, -33 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_Triangle_TwoMeter_4_R" parent="." instance=ExtResource( 141 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 0, -33 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_Triangle_OneMeter_3_R" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, -33 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_Triangle_OneMeter_4_R" parent="." instance=ExtResource( 14 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 0, -33 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_Triangle_TwoMeter_1_R" parent="." instance=ExtResource( 143 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 0, -33 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_Triangle_TwoMeter_2_R" parent="." instance=ExtResource( 133 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, -33 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_TriangleArc_TwoMeter_3_L" parent="." instance=ExtResource( 107 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 0, -43 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_Circle_TwoMeter_3" parent="." instance=ExtResource( 109 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 0, -20 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_LBlock_TwoMeter_4" parent="." instance=ExtResource( 111 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, -13 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_Mini_TwoMeter_4" parent="." instance=ExtResource( 19 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 0, -12 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_TriangleArc_TwoMeter_4_L" parent="." instance=ExtResource( 114 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 0, -43 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_Circle_TwoMeter_4" parent="." instance=ExtResource( 112 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 0, -19.9 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_BrokenEdge_TwoMeter_4" parent="." instance=ExtResource( 118 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 0, -26 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_Broken_OneMeter_2" parent="." instance=ExtResource( 116 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -29 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_TriangleArc_2_R" parent="." instance=ExtResource( 125 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -40 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_Broken_OneMeter_1" parent="." instance=ExtResource( 115 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -29 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_Broken_OneMeter_3" parent="." instance=ExtResource( 117 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, -29 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_Broken_TwoMeter_3" parent="." instance=ExtResource( 122 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, -29 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_Broken_TwoMeter_4" parent="." instance=ExtResource( 119 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 0, -29 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_TriangleArc_3_R" parent="." instance=ExtResource( 126 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -40 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_TriangleArc_OneMeter_1_R" parent="." instance=ExtResource( 129 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -40 )
+skeleton = NodePath("")
+
+[node name="FloorPanel_TriangleArc_OneMeter_2_R" parent="." instance=ExtResource( 130 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 0, -40 )
+skeleton = NodePath("")
+
+[node name="Stairs_3" parent="." instance=ExtResource( 62 )]
+transform = Transform( 1.98, 0, 0, 0, 0.48, 0, 0, 0, 1.1, -7, 0, -18 )
+skeleton = NodePath("")
+
+[node name="Stairs_4" parent="." instance=ExtResource( 62 )]
+transform = Transform( 1.98, 0, 0, 0, 1, 0, 0, 0, 1.1, -5, 0, -18 )
+skeleton = NodePath("")
+
+[node name="Ramp_4" parent="." instance=ExtResource( 11 )]
+transform = Transform( 1.98, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -18 )
+skeleton = NodePath("")
+
+[node name="Ramp_3" parent="." instance=ExtResource( 144 )]
+transform = Transform( 1.98, 0, 0, 0, 0.96, 0, 0, 0, 1.98, -9, 0, -18 )
