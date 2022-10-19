@@ -25,7 +25,7 @@ func _physics_process(delta):
 			queue_free()
 		elif layer == 8:
 			var x = transform.origin
-			transform = transform.rotated(Vector3(0,0,1),-transform.basis.x.angle_to(collision_info.normal))
+			transform = transform.rotated(Vector3(0,0,1), -2 * transform.basis.x.angle_to(collision_info.normal))
 			transform.origin = x
 
 	translation += SPEED * transform.basis.x * delta
