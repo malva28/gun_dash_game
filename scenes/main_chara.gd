@@ -109,7 +109,6 @@ func _shoot_process(angle):
 func _disparo():
 	var bullet = Bullet.instance()
 	get_parent().add_child(bullet)
-	print(bullet_spawn.transform)
 	bullet.global_transform = bullet_spawn.get_global_transform()
 	#bullet.velocity = get_viewport().get_mouse_position() - bullet.position
 	

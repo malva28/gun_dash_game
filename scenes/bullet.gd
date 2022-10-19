@@ -1,8 +1,9 @@
-extends Area
+extends KinematicBody
 
 #var velocity = Vector3()
 var SPEED = 8
-
+var Velocity = Vector3()
+var collision_info = null
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -14,19 +15,26 @@ func _ready():
 	connect("body_entered", self, "_on_body_entered")
 
 func _physics_process(delta):
-	#var collision_info = move_and_collide(velocity.normalized()*delta*speed)
+	collision_info = move_and_collide(Velocity.normalized()*SPEED)
+	if collision_info!=null:
+		var collider = collision_info.collider
+		var layer = null
+		if collider.has_method("get_collision_layer"):
+			layer = collider.get_collision_layer()
+		if layer == 1:
+			queue_free()
+		elif layer == 8:
+			var x = transform.origin
+			transform = transform.rotated(Vector3(0,0,1),-transform.basis.x.angle_to(collision_info.normal))
+			transform.origin = x
+
 	translation += SPEED * transform.basis.x * delta
 	
 
 func _on_body_entered(body):
 	var layer = body.get_collision_layer()
-	print(layer>>3)
 	if layer == 1:
 		queue_free()
 	elif layer == 8:
-		print(body.transform.origin)
-		var direction = (transform.origin - body.transform.origin).normalized()
-		#var angle = direction.angle()
-		self.rotation = angle_to(direction)
-		#
-		#translation  += direction * SPEED *  2
+		print("shoot!")
+
