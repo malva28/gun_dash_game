@@ -107,11 +107,11 @@ func _shoot_process(angle):
 func _disparo():
 	var bullet = Bullet.instance()
 	get_parent().add_child(bullet)
-	print(bullet_spawn.transform)
 	bullet.global_transform = bullet_spawn.get_global_transform()
 	#bullet.velocity = get_viewport().get_mouse_position() - bullet.position
 	
 func _on_enemy_body_entered(body):
 	if body.name == "MainChara":
 		hud.hp -= 1
+		hud.whole_heart_damage()
 		

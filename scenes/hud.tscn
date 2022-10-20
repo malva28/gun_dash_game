@@ -19,10 +19,6 @@ margin_bottom = 600.0
 margin_right = 1024.0
 alignment = 2
 
-[node name="HeartIcon" parent="VBoxContainer/ammoDisplay" instance=ExtResource( 3 )]
-margin_right = 16.0
-margin_bottom = 14.0
-
 [node name="HPDisplay" type="HBoxContainer" parent="VBoxContainer"]
 margin_top = 4.0
 margin_right = 1024.0

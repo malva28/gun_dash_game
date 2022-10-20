@@ -32,7 +32,7 @@ func _ready():
 		remaining.push_back(ammo)
 		ammo_display.add_child(ammo)
 		
-	for n in range(MAX_HP):
+	for n in range(MAX_HP/2):
 		var heart = Heart.instance()
 		current_hearts.push_back(heart)
 		hp_display.add_child(heart)
@@ -43,7 +43,6 @@ func reduce_ammo():
 		var used_bullet = remaining.pop_back()
 		used_bullet.disable_ammo()
 		used.push_back(used_bullet)
-		print(used_bullet)
 		ammo_count -= 1
 		return true
 	else:
@@ -64,6 +63,7 @@ func reload_all():
 		
 		
 func whole_heart_damage():
+	print("current_hp: ",current_hp)
 	if current_hp > 0:
 		var lost_heart = current_hearts.pop_back()
 		lost_heart.to_empty_heart()
@@ -75,6 +75,10 @@ func whole_heart_damage():
 			if lost_heart.is_half():
 				var top_heart =  current_hearts.back()
 				top_heart.to_half_heart()
+		for it in current_hearts:
+			print("status", it.heart_status)
+		for it in lost_hearts:
+			print("status", it.heart_status)
 		return true
 	else:
 		return false
@@ -127,10 +131,3 @@ func half_heart_recover():
 	else:
 		return false
 			
-			
-		
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass

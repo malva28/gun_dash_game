@@ -10,7 +10,7 @@ region = Rect2( 1, 3, 14, 12 )
 [sub_resource type="Animation" id=2]
 length = 0.001
 tracks/0/type = "value"
-tracks/0/path = NodePath(".:texture:atlas")
+tracks/0/path = NodePath(".:texture:region")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -19,10 +19,10 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ ExtResource( 1 ) ]
+"values": [ Rect2( 1, 3, 14, 12 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath(".:texture:region")
+tracks/1/path = NodePath(".:rect_scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -31,75 +31,15 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Rect2( 1, 3, 14, 12 ) ]
+"values": [ Vector2( 1, 1 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath(".:texture")
+tracks/2/path = NodePath(".:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ SubResource( 1 ) ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath(".:texture:resource_path")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ "res://scenes/ui/heartIcon.tscn::1" ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath(".:rect_size")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 16, 14 ) ]
-}
-tracks/5/type = "value"
-tracks/5/path = NodePath(".:rect_position")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 0, 0 ) ]
-}
-tracks/6/type = "value"
-tracks/6/path = NodePath(".:rect_scale")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 1, 1 ) ]
-}
-tracks/7/type = "value"
-tracks/7/path = NodePath(".:modulate")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
@@ -108,63 +48,39 @@ tracks/7/keys = {
 
 [sub_resource type="Animation" id=6]
 resource_name = "heart_dmg_at_full"
-length = 0.4
+length = 0.8
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath(".:texture:atlas")
+tracks/0/path = NodePath(".:texture:region")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 1 ) ]
+"values": [ Rect2( 1, 3, 14, 12 ), Rect2( 1, 17, 14, 12 ), Rect2( 1, 3, 14, 12 ), Rect2( 1, 17, 14, 12 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath(".:texture:region")
+tracks/1/path = NodePath(".:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 1,
-"values": [ Rect2( 1, 3, 14, 12 ), Rect2( 1, 17, 14, 12 ), Rect2( 1, 3, 14, 12 ), Rect2( 1, 17, 14, 12 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath(".:texture")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ SubResource( 1 ) ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath(".:modulate")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
-tracks/4/type = "value"
-tracks/4/path = NodePath(".:rect_scale")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:rect_scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
@@ -176,72 +92,36 @@ resource_name = "heart_dmg_at_half"
 length = 0.4
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath(".:texture:atlas")
-tracks/0/interp = 1
+tracks/0/path = NodePath(".:texture:region")
+tracks/0/interp = 0
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ ExtResource( 1 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath(".:texture:region")
-tracks/1/interp = 0
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
 "values": [ Rect2( 17, 3, 14, 12 ), Rect2( 1, 17, 14, 12 ), Rect2( 17, 3, 14, 12 ), Rect2( 1, 17, 14, 12 ) ]
 }
-tracks/2/type = "value"
-tracks/2/path = NodePath(".:texture")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ SubResource( 1 ) ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath(".:texture:resource_path")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ "res://scenes/ui/heartIcon.tscn::1" ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath(".:rect_scale")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rect_scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ) ]
 }
-tracks/5/type = "value"
-tracks/5/path = NodePath(".:modulate")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/keys = {
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
@@ -251,7 +131,7 @@ tracks/5/keys = {
 [sub_resource type="Animation" id=3]
 resource_name = "heart_empty"
 tracks/0/type = "value"
-tracks/0/path = NodePath(".:texture:atlas")
+tracks/0/path = NodePath(".:texture:region")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -259,11 +139,11 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ ExtResource( 1 ) ]
+"update": 0,
+"values": [ Rect2( 17, 18, 14, 12 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath(".:texture:region")
+tracks/1/path = NodePath(".:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -272,39 +152,15 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Rect2( 17, 18, 14, 12 ) ]
+"values": [ Color( 1, 1, 1, 1 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath(".:texture")
+tracks/2/path = NodePath(".:rect_scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ SubResource( 1 ) ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath(".:modulate")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath(".:rect_scale")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
@@ -314,7 +170,7 @@ tracks/4/keys = {
 [sub_resource type="Animation" id=4]
 resource_name = "heart_full"
 tracks/0/type = "value"
-tracks/0/path = NodePath(".:texture:atlas")
+tracks/0/path = NodePath(".:texture:region")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -322,11 +178,11 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ ExtResource( 1 ) ]
+"update": 0,
+"values": [ Rect2( 1, 3, 14, 12 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath(".:texture:region")
+tracks/1/path = NodePath(".:rect_scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -335,39 +191,15 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Rect2( 1, 3, 14, 12 ) ]
+"values": [ Vector2( 1, 1 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath(".:texture")
+tracks/2/path = NodePath(".:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ SubResource( 1 ) ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath(".:rect_scale")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 1, 1 ) ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath(".:modulate")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
@@ -377,7 +209,7 @@ tracks/4/keys = {
 [sub_resource type="Animation" id=5]
 resource_name = "heart_half"
 tracks/0/type = "value"
-tracks/0/path = NodePath(".:texture:atlas")
+tracks/0/path = NodePath(".:texture:region")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -385,11 +217,11 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ ExtResource( 1 ) ]
+"update": 0,
+"values": [ Rect2( 17, 3, 14, 12 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath(".:texture:region")
+tracks/1/path = NodePath(".:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -398,39 +230,15 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Rect2( 17, 3, 14, 12 ) ]
+"values": [ Color( 1, 1, 1, 1 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath(".:texture")
+tracks/2/path = NodePath(".:rect_scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ SubResource( 1 ) ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath(".:modulate")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath(".:rect_scale")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
@@ -442,7 +250,7 @@ resource_name = "heart_heal_to_full"
 length = 0.5
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath(".:texture:atlas")
+tracks/0/path = NodePath(".:texture:region")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -450,40 +258,28 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ ExtResource( 1 ) ]
+"update": 0,
+"values": [ Rect2( 1, 3, 14, 12 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath(".:texture:region")
-tracks/1/interp = 1
+tracks/1/path = NodePath(".:rect_scale")
+tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Rect2( 1, 3, 14, 12 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath(".:rect_scale")
-tracks/2/interp = 2
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
 "times": PoolRealArray( 0.0102898, 0.2, 0.4 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ), Vector2( 1.3, 1.3 ), Vector2( 1, 1 ) ]
 }
-tracks/3/type = "value"
-tracks/3/path = NodePath(".:modulate")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
 "times": PoolRealArray( 0, 0.2, 0.4 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
@@ -495,7 +291,7 @@ resource_name = "heart_heal_to_half"
 length = 0.5
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath(".:texture:atlas")
+tracks/0/path = NodePath(".:texture:region")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -503,40 +299,28 @@ tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ ExtResource( 1 ) ]
+"update": 0,
+"values": [ Rect2( 17, 3, 14, 12 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath(".:texture:region")
-tracks/1/interp = 1
+tracks/1/path = NodePath(".:rect_scale")
+tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Rect2( 17, 3, 14, 12 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath(".:rect_scale")
-tracks/2/interp = 2
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
 "times": PoolRealArray( 0.0102898, 0.2, 0.4 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Vector2( 1, 1 ), Vector2( 1.3, 1.3 ), Vector2( 1, 1 ) ]
 }
-tracks/3/type = "value"
-tracks/3/path = NodePath(".:modulate")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
 "times": PoolRealArray( 0, 0.2, 0.4 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
@@ -606,13 +390,14 @@ states/heart_heal_to_half/node = SubResource( 23 )
 states/heart_heal_to_half/position = Vector2( 659, -16 )
 transitions = [ "heart_full", "heart_dmg_at_full", SubResource( 13 ), "heart_dmg_at_full", "heart_half", SubResource( 14 ), "heart_dmg_at_full", "heart_empty", SubResource( 15 ), "heart_dmg_at_half", "heart_empty", SubResource( 16 ), "heart_half", "heart_dmg_at_half", SubResource( 17 ), "heart_empty", "heart_heal_to_half", SubResource( 24 ), "heart_empty", "heart_heal_to_full", SubResource( 25 ), "heart_heal_to_full", "heart_full", SubResource( 26 ), "heart_heal_to_half", "heart_half", SubResource( 27 ), "heart_half", "heart_heal_to_full", SubResource( 28 ) ]
 start_node = "heart_full"
-graph_offset = Vector2( 0, -82.9927 )
+graph_offset = Vector2( 0, 71.3528 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=19]
 
 [node name="HeartIcon" type="TextureRect"]
 margin_right = 32.0
 margin_bottom = 28.0
+rect_min_size = Vector2( 32, 28 )
 rect_pivot_offset = Vector2( 7, 6 )
 texture = SubResource( 1 )
 expand = true
