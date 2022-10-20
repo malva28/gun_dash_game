@@ -6,10 +6,6 @@ onready var anim_player = $AnimationPlayer
 onready var anim_tree = $AnimationTree
 onready var playback = anim_tree.get("parameters/playback")
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 func disable_ammo():
 	is_active = false
 	playback.travel("faded")
@@ -23,7 +19,3 @@ func _ready():
 	is_active = true
 	anim_tree.active = true
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
