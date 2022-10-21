@@ -155,8 +155,8 @@ func main_chara_death():
 func _resolve_area_enter(area: Area):
 	if area.has_method("_main_chara_enter"):
 		area._main_chara_enter(self)
-	if hud.hp <= 0:
-		die()
+	if hud.current_hp <= 0:
+		main_chara_death()
 
 func save_checkpoint(pos_x, pos_y, pos_z):
 	cp_pos.x = pos_x
@@ -166,16 +166,12 @@ func save_checkpoint(pos_x, pos_y, pos_z):
 
 
 func die():
-	if hud.hp == 0:
+	if hud.current_hp <= 0:
 		get_tree().reload_current_scene()
-
-
-
-
 
 func _on_Deathbox_body_entered(body):
 	if body.name == "MainChara":
-		hud.hp -= 3
+		hud.current_hp = 0
 		die()
 
 func _resolve_body_enter(body: KinematicBody):

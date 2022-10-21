@@ -14,7 +14,6 @@ var current_hp = 6 setget set_hp
 
 func set_hp(value):
 	current_hp = value
-	hp_label.text = "HP = %d" % current_hp
 
 var MAX_AMMO = 5
 var ammo_count = 5
@@ -131,3 +130,5 @@ func half_heart_recover():
 	else:
 		return false
 			
+func reset_life():
+	pass
