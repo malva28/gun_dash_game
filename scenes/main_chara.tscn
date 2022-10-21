@@ -359,13 +359,15 @@ graph_offset = Vector2( -231.364, 102.487 )
 [sub_resource type="AnimationNodeStateMachinePlayback" id=13]
 
 [node name="MainChara" type="KinematicBody"]
+collision_layer = 2
+collision_mask = 17
 axis_lock_motion_z = true
 move_lock_z = true
 script = ExtResource( 3 )
 Bullet = ExtResource( 4 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0.0038667 )
 shape = SubResource( 1 )
 
 [node name="Camera" type="Camera" parent="."]

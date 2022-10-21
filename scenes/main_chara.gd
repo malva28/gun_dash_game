@@ -84,12 +84,20 @@ func _physics_process(delta):
 	
 
 	
-	### SI NO QUEDAN BALAS, NO DISPARAR
+	### SI CAE EN UN SPIKE POR ENCIMA RECIBE DAÑO
+	for i in get_slide_count():
+		var collision_info = get_slide_collision(i)
+		if collision_info.collider.has_method("get_collision_layer"):
+			var layer = collision_info.collider.get_collision_layer()
+			if layer == 33 and collision_info.normal.y > 0:
+				take_damage()
 
 		
 	### SI ESTA EN EL SUELO, RECARGA
 	if is_on_floor():
 		hud.reload_all()
+		
+		
 		
 	
 		
@@ -131,17 +139,33 @@ func _on_enemy_body_entered(body):
 		movement_enabled = false
 		var gun = get_node("arm/MeshInstance")
 		gun.queue_free()
-		playback.travel("die") 
+		playback.travel("die")
 
-		print("disabled")
 		var t = Timer.new()
 		t.set_wait_time(3)
 		t.set_one_shot(true)
 		self.add_child(t)
 		t.start()
 		yield(t, "timeout")
-			
+
 		get_tree().change_scene("res://scenes/ui/main_menu.tscn")
 		
-
+func take_damage():
+	hud.hp -= 1
 		
+	if hud.hp <= 0:
+		movement_enabled = false
+		var gun = get_node("arm/MeshInstance")
+		gun.queue_free()
+		playback.travel("die")
+
+		var t = Timer.new()
+		t.set_wait_time(3)
+		t.set_one_shot(true)
+		self.add_child(t)
+		t.start()
+		yield(t, "timeout")
+
+		get_tree().change_scene("res://scenes/ui/main_menu.tscn")
+	
+

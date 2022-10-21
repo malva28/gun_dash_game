@@ -24,7 +24,11 @@ func _physics_process(delta):
 			match layer:
 				1: 
 					queue_free()
-				8: 
+				2: 
+					if collider.has_method("take_damage"):
+						collider.take_damage()
+					queue_free()
+				8:
 					print(collision_info.position)
 					var x = transform.origin
 					transform.basis.x = transform.basis.x.bounce(collision_info.normal)
@@ -33,12 +37,4 @@ func _physics_process(delta):
 
 
 	translation += SPEED * transform.basis.x * delta
-	
-
-func _on_body_entered(body):
-	var layer = body.get_collision_layer()
-	if layer == 1:
-		queue_free()
-	elif layer == 8:
-		print("shoot!")
 
