@@ -109,9 +109,7 @@ func _disparo():
 	get_parent().add_child(bullet)
 	bullet.global_transform = bullet_spawn.get_global_transform()
 	#bullet.velocity = get_viewport().get_mouse_position() - bullet.position
-	
-func _on_enemy_body_entered(body):
-	if body.name == "MainChara":
-		hud.hp -= 1
-		hud.whole_heart_damage()
 		
+func _resolve_area_enter(area: Area):
+	if area.has_method("_main_chara_enter"):
+		area._main_chara_enter(self)

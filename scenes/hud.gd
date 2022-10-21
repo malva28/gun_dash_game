@@ -1,23 +1,25 @@
 extends MarginContainer
 
-var hp = 3 setget set_hp
+#var hp = 3 setget set_hp
 
 onready var hp_label = $hp
 
-func set_hp(value):
-	hp = value
-	hp_label.text = "HP = %d" % hp
+
 
 export(PackedScene) var Ammo
 export(PackedScene) var Heart
 
 var MAX_HP = 6
-var current_hp = 6
+var current_hp = 6 setget set_hp
+
+func set_hp(value):
+	current_hp = value
+	hp_label.text = "HP = %d" % current_hp
 
 var MAX_AMMO = 5
 var ammo_count = 5
-onready var ammo_display = $VBoxContainer/ammoDisplay
-onready var hp_display = $VBoxContainer/HPDisplay
+onready var ammo_display = $VBoxContainer/HSplitContainer/ammoDisplay
+onready var hp_display = $VBoxContainer/HSplitContainer/HPDisplay
 
 var current_hearts = []
 var lost_hearts = []
@@ -63,35 +65,32 @@ func reload_all():
 		
 		
 func whole_heart_damage():
-	print("current_hp: ",current_hp)
 	if current_hp > 0:
 		var lost_heart = current_hearts.pop_back()
+		var is_half = lost_heart.is_half()
 		lost_heart.to_empty_heart()
 		lost_hearts.push_back(lost_heart)
 		if current_hp <= 1:
 			current_hp -= 1
 		else:
 			current_hp -= 2
-			if lost_heart.is_half():
+			if is_half:
 				var top_heart =  current_hearts.back()
 				top_heart.to_half_heart()
-		for it in current_hearts:
-			print("status", it.heart_status)
-		for it in lost_hearts:
-			print("status", it.heart_status)
 		return true
 	else:
 		return false
 
 func whole_heart_recover():
 	if current_hp < MAX_HP:
+		var is_empty = current_hearts.empty()
 		var top_heart =  current_hearts.back()
 		if current_hp >= MAX_HP-1:
 			top_heart.to_full_heart()
 			current_hp += 1
 		else:
 			var recovered_heart = lost_hearts.pop_back()
-			if top_heart.is_half():
+			if not is_empty and top_heart.is_half():
 				top_heart.to_full_heart()
 				recovered_heart.to_half_heart()			
 			else:
@@ -119,8 +118,9 @@ func half_heart_damage():
 		
 func half_heart_recover():
 	if current_hp < MAX_HP:
+		var is_empty = current_hearts.empty()
 		var top_heart =  current_hearts.back()
-		if top_heart.is_half():
+		if not is_empty and top_heart.is_half():
 			top_heart.to_full_heart()
 		else:
 			var recovered_heart = lost_hearts.pop_back()

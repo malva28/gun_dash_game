@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scenes/main_chara.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/14-TileSets/tile_2.png" type="Texture" id=2]
 [ext_resource path="res://scenes/barrel.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/bullet.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/enemy1.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/object_heart.tscn" type="PackedScene" id=6]
 
 [sub_resource type="BoxShape" id=1]
 
@@ -43,4 +44,5 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.24741, -0.0278173, -3.36066
 [node name="enemy1" parent="." instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.18572, 0.608574, -3.27984 )
 
-[connection signal="body_entered" from="enemy1" to="MainChara" method="_on_enemy_body_entered"]
+[node name="Spatial" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0935324, 0.37159, -3.49157 )

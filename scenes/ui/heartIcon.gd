@@ -14,17 +14,14 @@ func _ready():
 	anim_tree.active = true
 
 func to_half_heart():
-	print("half: ", self)
 	heart_status = HALF_HEART
 	playback.travel("heart_half")
 
 func to_full_heart():
-	print("full: ", self)
 	heart_status = FULL_HEART
 	playback.travel("heart_full")
 
 func to_empty_heart():
-	print("empty: ", self)
 	heart_status = EMPTY_HEART
 	playback.travel("heart_empty")
 	
