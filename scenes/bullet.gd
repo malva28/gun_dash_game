@@ -25,8 +25,8 @@ func _physics_process(delta):
 				1: 
 					queue_free()
 				2: 
-					if collider.has_method("take_damage"):
-						collider.take_damage()
+					if collider.has_method("_resolve_body_enter"):
+						collider._resolve_body_enter(self)
 					queue_free()
 				8:
 					print(collision_info.position)
@@ -38,3 +38,5 @@ func _physics_process(delta):
 
 	translation += SPEED * transform.basis.x * delta
 
+func _main_chara_enter(main_chara):
+	main_chara.hud.half_heart_damage()

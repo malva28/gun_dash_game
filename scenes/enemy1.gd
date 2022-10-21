@@ -17,3 +17,4 @@ func _on_body_entered(body: Node):
 func _main_chara_enter(main_chara: KinematicBody):
 	# Health loss
 	main_chara.hud.whole_heart_damage()
+	main_chara.main_chara_death()

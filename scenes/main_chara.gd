@@ -133,8 +133,8 @@ func _disparo():
 	bullet.global_transform = bullet_spawn.get_global_transform()
 	#bullet.velocity = get_viewport().get_mouse_position() - bullet.position
 	
-func _main_chara_death():
-	if hud.hp <= 0:
+func main_chara_death():
+	if hud.current_hp <= 0:
 		movement_enabled = false
 		var gun = get_node("arm/MeshInstance")
 		if gun:
@@ -154,3 +154,7 @@ func _main_chara_death():
 func _resolve_area_enter(area: Area):
 	if area.has_method("_main_chara_enter"):
 		area._main_chara_enter(self)
+		
+func _resolve_body_enter(body: KinematicBody):
+	if body.has_method("_main_chara_enter"):
+		body._main_chara_enter(self)
