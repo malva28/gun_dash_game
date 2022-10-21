@@ -140,7 +140,8 @@ func _on_enemy_body_entered(body):
 	if hud.hp <= 0:
 		movement_enabled = false
 		var gun = get_node("arm/MeshInstance")
-		gun.queue_free()
+		if gun:
+			gun.queue_free()
 		playback.travel("die")
 
 		var t = Timer.new()
