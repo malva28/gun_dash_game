@@ -1,0 +1,90 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/spikes/spike_cone_low_poly.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/Platforms/Tiles/FloorPanel_Mini_1.tscn" type="PackedScene" id=2]
+
+[node name="Spatial" type="Spatial"]
+
+[node name="FloorPanel_Mini_1" parent="." instance=ExtResource( 2 )]
+
+[node name="Spikes" type="Spatial" parent="."]
+
+[node name="MeshInstance" type="MeshInstance" parent="Spikes"]
+transform = Transform( 0.5, 0, 0, 0, 0.25, 0, 0, 0, 0.5, 0.1, 0.25, -0.1 )
+mesh = ExtResource( 1 )
+skeleton = NodePath("../..")
+
+[node name="MeshInstance2" type="MeshInstance" parent="Spikes"]
+transform = Transform( 0.5, 0, 0, 0, 0.25, 0, 0, 0, 0.5, 0.1, 0.25, -0.35 )
+mesh = ExtResource( 1 )
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3" type="MeshInstance" parent="Spikes"]
+transform = Transform( 0.5, 0, 0, 0, 0.25, 0, 0, 0, 0.5, 0.1, 0.25, -0.6 )
+mesh = ExtResource( 1 )
+skeleton = NodePath("../..")
+
+[node name="MeshInstance4" type="MeshInstance" parent="Spikes"]
+transform = Transform( 0.5, 0, 0, 0, 0.25, 0, 0, 0, 0.5, 0.1, 0.25, -0.85 )
+mesh = ExtResource( 1 )
+skeleton = NodePath("../..")
+
+[node name="MeshInstance5" type="MeshInstance" parent="Spikes"]
+transform = Transform( 0.5, 0, 0, 0, 0.25, 0, 0, 0, 0.5, 0.35, 0.25, -0.1 )
+mesh = ExtResource( 1 )
+skeleton = NodePath("../..")
+
+[node name="MeshInstance6" type="MeshInstance" parent="Spikes"]
+transform = Transform( 0.5, 0, 0, 0, 0.25, 0, 0, 0, 0.5, 0.35, 0.25, -0.35 )
+mesh = ExtResource( 1 )
+skeleton = NodePath("../..")
+
+[node name="MeshInstance7" type="MeshInstance" parent="Spikes"]
+transform = Transform( 0.5, 0, 0, 0, 0.25, 0, 0, 0, 0.5, 0.35, 0.25, -0.6 )
+mesh = ExtResource( 1 )
+skeleton = NodePath("../..")
+
+[node name="MeshInstance8" type="MeshInstance" parent="Spikes"]
+transform = Transform( 0.5, 0, 0, 0, 0.25, 0, 0, 0, 0.5, 0.35, 0.25, -0.85 )
+mesh = ExtResource( 1 )
+skeleton = NodePath("../..")
+
+[node name="MeshInstance9" type="MeshInstance" parent="Spikes"]
+transform = Transform( 0.5, 0, 0, 0, 0.25, 0, 0, 0, 0.5, 0.6, 0.25, -0.1 )
+mesh = ExtResource( 1 )
+skeleton = NodePath("../..")
+
+[node name="MeshInstance10" type="MeshInstance" parent="Spikes"]
+transform = Transform( 0.5, 0, 0, 0, 0.25, 0, 0, 0, 0.5, 0.6, 0.25, -0.35 )
+mesh = ExtResource( 1 )
+skeleton = NodePath("../..")
+
+[node name="MeshInstance11" type="MeshInstance" parent="Spikes"]
+transform = Transform( 0.5, 0, 0, 0, 0.25, 0, 0, 0, 0.5, 0.6, 0.25, -0.6 )
+mesh = ExtResource( 1 )
+skeleton = NodePath("../..")
+
+[node name="MeshInstance12" type="MeshInstance" parent="Spikes"]
+transform = Transform( 0.5, 0, 0, 0, 0.25, 0, 0, 0, 0.5, 0.6, 0.25, -0.85 )
+mesh = ExtResource( 1 )
+skeleton = NodePath("../..")
+
+[node name="MeshInstance13" type="MeshInstance" parent="Spikes"]
+transform = Transform( 0.5, 0, 0, 0, 0.25, 0, 0, 0, 0.5, 0.85, 0.25, -0.1 )
+mesh = ExtResource( 1 )
+skeleton = NodePath("../..")
+
+[node name="MeshInstance14" type="MeshInstance" parent="Spikes"]
+transform = Transform( 0.5, 0, 0, 0, 0.25, 0, 0, 0, 0.5, 0.85, 0.25, -0.35 )
+mesh = ExtResource( 1 )
+skeleton = NodePath("../..")
+
+[node name="MeshInstance15" type="MeshInstance" parent="Spikes"]
+transform = Transform( 0.5, 0, 0, 0, 0.25, 0, 0, 0, 0.5, 0.85, 0.25, -0.6 )
+mesh = ExtResource( 1 )
+skeleton = NodePath("../..")
+
+[node name="MeshInstance16" type="MeshInstance" parent="Spikes"]
+transform = Transform( 0.5, 0, 0, 0, 0.25, 0, 0, 0, 0.5, 0.85, 0.25, -0.85 )
+mesh = ExtResource( 1 )
+skeleton = NodePath("../..")

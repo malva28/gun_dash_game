@@ -1,10 +1,8 @@
 extends KinematicBody
-
 export(PackedScene) var Bullet
-
+var cp_pos = Vector3(0,2,-4)
 var velocity = Vector3()
 var hp = 3
-
 const  ACCELERATION = 10
 const SHOOT_ACCEL = 7
 const SPEED = 2
@@ -35,6 +33,7 @@ onready var playback = anim_tree.get("parameters/playback")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	self.transform.origin = Checkpoint.spawn_point
 	anim_tree.active = true
 	
 #func _process(delta: float) -> void:
@@ -103,6 +102,8 @@ func _physics_process(delta):
 		
 	
 		
+	
+		
 	### Animation logic
 	if is_on_floor():
 # warning-ignore:integer_division
@@ -148,13 +149,35 @@ func main_chara_death():
 		t.start()
 		yield(t, "timeout")
 
-		get_tree().change_scene("res://scenes/ui/main_menu.tscn")
+		die()
 
 		
 func _resolve_area_enter(area: Area):
 	if area.has_method("_main_chara_enter"):
 		area._main_chara_enter(self)
-		
+	if hud.hp <= 0:
+		die()
+
+func save_checkpoint(pos_x, pos_y, pos_z):
+	cp_pos.x = pos_x
+	cp_pos.y = pos_y
+	cp_pos.z = pos_z
+	
+
+
+func die():
+	if hud.hp == 0:
+		get_tree().reload_current_scene()
+
+
+
+
+
+func _on_Deathbox_body_entered(body):
+	if body.name == "MainChara":
+		hud.hp -= 3
+		die()
+
 func _resolve_body_enter(body: KinematicBody):
 	if body.has_method("_main_chara_enter"):
 		body._main_chara_enter(self)
