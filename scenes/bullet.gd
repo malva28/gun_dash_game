@@ -1,8 +1,9 @@
-extends Area
+extends KinematicBody
 
 #var velocity = Vector3()
 var SPEED = 8
-
+var Velocity = Vector3()
+var collision_info = null
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -11,12 +12,29 @@ var SPEED = 8
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
+	pass
+	
 func _physics_process(delta):
-	#var collision_info = move_and_collide(velocity.normalized()*delta*speed)
+	collision_info = move_and_collide(Velocity.normalized()*SPEED)
+	if collision_info!=null:
+		var collider = collision_info.collider
+		var layer = null
+		if collider.has_method("get_collision_layer"):
+			layer = collider.get_collision_layer()
+			match layer:
+				1: 
+					queue_free()
+				2: 
+					if collider.has_method("take_damage"):
+						collider.take_damage()
+					queue_free()
+				8:
+					print(collision_info.position)
+					var x = transform.origin
+					transform.basis.x = transform.basis.x.bounce(collision_info.normal)
+					transform.basis.y = transform.basis.y.bounce(collision_info.normal)
+					transform.origin = x
+
+
 	translation += SPEED * transform.basis.x * delta
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass

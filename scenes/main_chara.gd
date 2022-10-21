@@ -14,12 +14,14 @@ const GRAVITY = 0.1
 const bulletPath = preload("res://scenes/bullet.tscn")
 
 var z_distance = 4 # distancia de la camara a Z
+var movement_enabled = true
 
 onready var pivot = $Pivot
 onready var arm = $arm
 onready var camera = $Camera
 onready var bullet_spawn = $arm/BulletSpawn
 onready var hud = $Control/hud
+
 
 onready var anim_player = $AnimationPlayer
 onready var anim_tree = $AnimationTree
@@ -48,34 +50,58 @@ func _physics_process(delta):
 	
 	var move_input = Input.get_axis("move_left", "move_right")
 	
-	velocity.x = move_toward(velocity.x, move_input * SPEED, ACCELERATION * delta)
+	
 	
 	velocity.y -= GRAVITY  
 	
-	if is_on_floor() and Input.is_action_just_pressed("jump"):
-		velocity.y = +JUMP_SPEED
+	if movement_enabled:
+		velocity.x = move_toward(velocity.x, move_input * SPEED, ACCELERATION * delta)
+		
+		var mouse_pos_viewport = get_viewport().get_mouse_position()
+		var adjusted_pos = camera.project_position(mouse_pos_viewport, z_distance)
+		
+		var mouse_pos = Vector2(adjusted_pos.x, adjusted_pos.y)
+		var chara_pos = Vector2(transform.origin.x, transform.origin.y)
+		
+		var angle = (mouse_pos - chara_pos).angle()
+		var shoot_momentum = _shoot_process(angle)
+		arm.rotation = Vector3(0,0, angle)
+		
+		if Input.is_action_just_pressed("Disparo") and hud.reduce_ammo():
+			velocity.x = +shoot_momentum.x
+			velocity.y = +shoot_momentum.y
+			_disparo()
+	
+		if is_on_floor() and Input.is_action_just_pressed("jump"):
+			velocity.y = +JUMP_SPEED
+
+		if Input.is_action_pressed("move_right") and not Input.is_action_pressed("move_left"):
+			pivot.scale.x =1
+		if Input.is_action_pressed("move_left") and not Input.is_action_pressed("move_right"):
+			pivot.scale.x =-1
+			
 
 	
-	var mouse_pos_viewport = get_viewport().get_mouse_position()
-	var adjusted_pos = camera.project_position(mouse_pos_viewport, z_distance)
+
 	
-	var mouse_pos = Vector2(adjusted_pos.x, adjusted_pos.y)
-	var chara_pos = Vector2(transform.origin.x, transform.origin.y)
-	
-	var angle = (mouse_pos - chara_pos).angle()
-	var shoot_momentum = _shoot_process(angle)
-	
-	arm.rotation = Vector3(0,0, angle)
-	
-	### SI NO QUEDAN BALAS, NO DISPARAR
-	if Input.is_action_just_pressed("Disparo") and hud.reduce_ammo():
-		velocity.x = +shoot_momentum.x
-		velocity.y = +shoot_momentum.y
-		_disparo()
+	### SI CAE EN UN SPIKE POR ENCIMA RECIBE DAÑO
+#	for i in get_slide_count():
+#		var collision_info = get_slide_collision(i)
+#		if collision_info.collider.has_method("get_collision_layer"):
+#			var layer = collision_info.collider.get_collision_layer()
+#			if layer == 33 and collision_info.normal.y > 0:
+#				print(layer)
+#				print(collision_info.normal.y)
+#				hud.hp -= 1
+
 		
 	### SI ESTA EN EL SUELO, RECARGA
 	if is_on_floor():
 		hud.reload_all()
+		
+		
+		
+	
 		
 	### Animation logic
 	if is_on_floor():
@@ -90,10 +116,7 @@ func _physics_process(delta):
 		else:
 			playback.travel("jump_fall")
 		
-	if Input.is_action_pressed("move_right") and not Input.is_action_pressed("move_left"):
-		pivot.scale.x =1
-	if Input.is_action_pressed("move_left") and not Input.is_action_pressed("move_right"):
-		pivot.scale.x =-1
+
 		
 	
 	
@@ -109,6 +132,24 @@ func _disparo():
 	get_parent().add_child(bullet)
 	bullet.global_transform = bullet_spawn.get_global_transform()
 	#bullet.velocity = get_viewport().get_mouse_position() - bullet.position
+	
+func _main_chara_death():
+	if hud.hp <= 0:
+		movement_enabled = false
+		var gun = get_node("arm/MeshInstance")
+		if gun:
+			gun.queue_free()
+		playback.travel("die")
+
+		var t = Timer.new()
+		t.set_wait_time(3)
+		t.set_one_shot(true)
+		self.add_child(t)
+		t.start()
+		yield(t, "timeout")
+
+		get_tree().change_scene("res://scenes/ui/main_menu.tscn")
+
 		
 func _resolve_area_enter(area: Area):
 	if area.has_method("_main_chara_enter"):
