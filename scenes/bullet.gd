@@ -21,14 +21,13 @@ func _physics_process(delta):
 		var layer = null
 		if collider.has_method("get_collision_layer"):
 			layer = collider.get_collision_layer()
-			match layer:
-				1: 
+			if layer == 1:
 					queue_free()
-				2: 
+			elif layer == 2:
 					if collider.has_method("_resolve_body_enter"):
 						collider._resolve_body_enter(self)
 					queue_free()
-				8:
+			elif layer>>3==1:
 					print(collision_info.position)
 					var x = transform.origin
 					transform.basis.x = transform.basis.x.bounce(collision_info.normal)
@@ -40,3 +39,4 @@ func _physics_process(delta):
 
 func _main_chara_enter(main_chara):
 	main_chara.hud.half_heart_damage()
+	main_chara.main_chara_death()
