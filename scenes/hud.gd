@@ -48,6 +48,9 @@ func reload_all():
 	else:
 		return n
 
+func _reset_life():
+	if hp == 0:
+		hp = 3
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass

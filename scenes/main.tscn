@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scenes/main_chara.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/14-TileSets/tile_2.png" type="Texture" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://scenes/enemy1.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/meshes/BasicPlatformingTiles.tres" type="MeshLibrary" id=6]
 [ext_resource path="res://scenes/main.gd" type="Script" id=7]
+[ext_resource path="res://checkpoint1.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Deathbox.tscn" type="PackedScene" id=9]
 
 [sub_resource type="BoxShape" id=1]
 
@@ -48,14 +50,28 @@ mesh_library = ExtResource( 6 )
 cell_size = Vector3( 1, 1, 1 )
 cell_scale = 0.5
 data = {
-"cells": PoolIntArray( 5, 65531, 1441831, 8, 65531, 1441830, 0, 65532, 0, 1, 65532, 0, 2, 65532, 0, 3, 65532, 0, 4, 65532, 0, 12, 65532, 1048640, 15, 65532, 1048634, 18, 65532, 1048578, 19, 65532, 1048662, 65534, 65532, 0, 65535, 65532, 0 )
+"cells": PoolIntArray( 5, 65531, 1441831, 8, 65531, 1441830, 22, 65531, 98, 23, 65531, 98, 24, 65531, 98, 25, 65531, 98, 26, 65531, 98, 27, 65531, 98, 65558, 65531, 98, 65559, 65531, 98, 65560, 65531, 98, 65561, 65531, 98, 65562, 65531, 98, 65563, 65531, 98, 131094, 65531, 98, 131095, 65531, 98, 131096, 65531, 98, 131097, 65531, 98, 131098, 65531, 98, 131099, 65531, 98, 196630, 65531, 98, 196631, 65531, 98, 196632, 65531, 98, 196633, 65531, 98, 196634, 65531, 98, 196635, 65531, 98, 262167, 65531, 98, 262168, 65531, 98, 262169, 65531, 98, 262170, 65531, 98, 262171, 65531, 98, 327703, 65531, 98, 327704, 65531, 98, 327705, 65531, 98, 327706, 65531, 98, 327707, 65531, 98, 0, 65532, 0, 1, 65532, 0, 2, 65532, 0, 3, 65532, 0, 4, 65532, 0, 9, 65532, 1048613, 10, 65532, 1048613, 12, 65532, 1048640, 15, 65532, 1048634, 18, 65532, 1048578, 19, 65532, 1048662, 21, 65532, 133, 22, 65532, 50, 23, 65532, 50, 27, 65532, 98, 28, 65532, 98, 29, 65532, 98, 65534, 65532, 0, 65535, 65532, 0, 65562, 65532, 11, 65563, 65532, 98, 65564, 65532, 98, 65565, 65532, 98, 131099, 65532, 98, 131100, 65532, 98, 131101, 65532, 98, 196631, 65532, 11, 196635, 65532, 98, 196636, 65532, 98, 196637, 65532, 98, 262171, 65532, 98, 262172, 65532, 98, 262173, 65532, 98, 262179, 65532, 98, 262180, 65532, 98, 327706, 65532, 11, 327707, 65532, 98, 327708, 65532, 98, 327709, 65532, 98 )
 }
 __meta__ = {
 "_editor_clip_": 0,
-"_editor_floor_": Vector3( 0, -2, 0 )
+"_editor_floor_": Vector3( 0, -2, -4 )
 }
 
 [node name="Tower" parent="." instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.178493, -87.7334, -84.3584 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.20148, -87.0769, -84.5837 )
+
+[node name="checkpoint1" parent="." instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.2121, 1.31322, -4.60985 )
+
+[node name="checkpoint2" parent="." instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.3337, 6.41216, -5.00146 )
+
+[node name="enemy2" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 33.4114, 5.04263, -3.59655 )
+
+[node name="Deathbox" parent="." instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.232, -3.52025, 0.317211 )
 
 [connection signal="body_entered" from="enemy1" to="MainChara" method="_on_enemy_body_entered"]
+[connection signal="body_entered" from="enemy2" to="MainChara" method="_on_enemy_body_entered"]
+[connection signal="body_entered" from="Deathbox" to="MainChara" method="_on_Deathbox_body_entered"]
