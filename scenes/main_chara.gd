@@ -85,12 +85,14 @@ func _physics_process(delta):
 
 	
 	### SI CAE EN UN SPIKE POR ENCIMA RECIBE DAÑO
-	for i in get_slide_count():
-		var collision_info = get_slide_collision(i)
-		if collision_info.collider.has_method("get_collision_layer"):
-			var layer = collision_info.collider.get_collision_layer()
-			if layer == 33 and collision_info.normal.y > 0:
-				take_damage()
+#	for i in get_slide_count():
+#		var collision_info = get_slide_collision(i)
+#		if collision_info.collider.has_method("get_collision_layer"):
+#			var layer = collision_info.collider.get_collision_layer()
+#			if layer == 33 and collision_info.normal.y > 0:
+#				print(layer)
+#				print(collision_info.normal.y)
+#				hud.hp -= 1
 
 		
 	### SI ESTA EN EL SUELO, RECARGA
