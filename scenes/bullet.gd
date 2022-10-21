@@ -12,8 +12,8 @@ var collision_info = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	connect("body_entered", self, "_on_body_entered")
-
+	pass
+	
 func _physics_process(delta):
 	collision_info = move_and_collide(Velocity.normalized()*SPEED)
 	if collision_info!=null:
@@ -27,7 +27,8 @@ func _physics_process(delta):
 				8: 
 					print(collision_info.position)
 					var x = transform.origin
-					transform = transform.rotated(Vector3(0,0,1), -2 * transform.basis.x.angle_to(collision_info.normal))
+					transform.basis.x = transform.basis.x.bounce(collision_info.normal)
+					transform.basis.y = transform.basis.y.bounce(collision_info.normal)
 					transform.origin = x
 
 

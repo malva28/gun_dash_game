@@ -126,14 +126,13 @@ func _disparo():
 func _on_enemy_body_entered(body):
 	if body.name == "MainChara":
 		hud.hp -= 1
+		
 	if hud.hp <= 0:
-		
-		
 		movement_enabled = false
 		var gun = get_node("arm/MeshInstance")
 		gun.queue_free()
 		playback.travel("die") 
-		
+
 		print("disabled")
 		var t = Timer.new()
 		t.set_wait_time(3)
