@@ -15,8 +15,8 @@ var current_hp = 6 setget set_hp
 func set_hp(value):
 	current_hp = value
 
-var MAX_AMMO = 5
-var ammo_count = 5
+var MAX_AMMO = 3
+var ammo_count = 3
 onready var ammo_display = $VBoxContainer/HSplitContainer/ammoDisplay
 onready var hp_display = $VBoxContainer/HSplitContainer/HPDisplay
 

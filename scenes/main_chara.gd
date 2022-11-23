@@ -19,6 +19,7 @@ onready var arm = $arm
 onready var camera = $Camera
 onready var bullet_spawn = $arm/BulletSpawn
 onready var hud = $Control/hud
+onready var Tombstone = preload("res://scenes/Tombstone.tscn")
 
 
 onready var anim_player = $AnimationPlayer
@@ -54,8 +55,6 @@ func _physics_process(delta):
 	velocity.y -= GRAVITY  
 	
 	if movement_enabled:
-		velocity.x = move_toward(velocity.x, move_input * SPEED, ACCELERATION * delta)
-		
 		var mouse_pos_viewport = get_viewport().get_mouse_position()
 		var adjusted_pos = camera.project_position(mouse_pos_viewport, z_distance)
 		
@@ -78,9 +77,11 @@ func _physics_process(delta):
 			pivot.scale.x =1
 		if Input.is_action_pressed("move_left") and not Input.is_action_pressed("move_right"):
 			pivot.scale.x =-1
-			
+	else: 
+		velocity.x = 0
+		move_input = 0
 
-	
+	velocity.x = move_toward(velocity.x, move_input * SPEED, ACCELERATION * delta)
 
 	
 	### SI CAE EN UN SPIKE POR ENCIMA RECIBE DAÑO
@@ -97,13 +98,6 @@ func _physics_process(delta):
 	### SI ESTA EN EL SUELO, RECARGA
 	if is_on_floor():
 		hud.reload_all()
-		
-		
-		
-	
-		
-	
-		
 	### Animation logic
 	if is_on_floor():
 # warning-ignore:integer_division
@@ -137,11 +131,16 @@ func _disparo():
 func main_chara_death():
 	if hud.current_hp <= 0:
 		movement_enabled = false
-		var gun = get_node("arm/MeshInstance")
+		var gun = get_node("arm")
 		if gun:
 			gun.queue_free()
-		playback.travel("die")
-
+		
+		var tombstone = Tombstone.instance()
+		get_parent().add_child(tombstone)
+		tombstone.global_transform = self.global_transform
+		hide()
+		get_parent().remove_child(camera)
+		tombstone.add_child(camera)
 		var t = Timer.new()
 		t.set_wait_time(3)
 		t.set_one_shot(true)
