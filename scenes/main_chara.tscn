@@ -394,7 +394,6 @@ anims/run = SubResource( 4 )
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource( 12 )
 anim_player = NodePath("../AnimationPlayer")
-active = true
 parameters/playback = SubResource( 13 )
 
 [node name="Pivot" type="Spatial" parent="."]
