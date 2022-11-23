@@ -346,7 +346,8 @@ parameters/playback = SubResource( 13 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.015, 0.197, 0 )
 pixel_size = 0.03
 texture = ExtResource( 1 )
-hframes = 2
+hframes = 6
+frame = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

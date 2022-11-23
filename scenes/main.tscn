@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://scenes/main_chara.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/14-TileSets/tile_2.png" type="Texture" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://checkpoint1.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Deathbox.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/object_heart.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/Spike.tscn" type="PackedScene" id=11]
 
 [sub_resource type="BoxShape" id=1]
 
@@ -77,6 +78,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.232, -3.52025, 0.317211 )
 
 [node name="Spatial" parent="." instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.738561, 0.5, -3.59785 )
+
+[node name="Spike" parent="." instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, -4 )
 
 [connection signal="body_entered" from="enemy1" to="MainChara" method="_on_enemy_body_entered"]
 [connection signal="body_entered" from="enemy2" to="MainChara" method="_on_enemy_body_entered"]
