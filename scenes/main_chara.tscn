@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://assets/dash/1 - Agent_Mike_Idle (32 x 32).png" type="Texture" id=1]
 [ext_resource path="res://scenes/gun.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://assets/dash/1 - Agent_Mike_Jump_&_Falling (32 x 32).png" type="Texture" id=7]
 [ext_resource path="res://scenes/hud.tscn" type="PackedScene" id=8]
 [ext_resource path="res://assets/tombstone/tombstone-sprite.png" type="Texture" id=9]
+[ext_resource path="res://assets/dash/1 - Agent_Mike_Hand (32 x 32).png" type="Texture" id=10]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.279511
@@ -381,6 +382,10 @@ skeleton = NodePath("../..")
 
 [node name="BulletSpawn" type="Position3D" parent="arm"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.464, 0.024, 0 )
+
+[node name="Sprite3D" type="Sprite3D" parent="arm"]
+transform = Transform( 2.5, 0, 0, 0, 2.5, 0, 0, 0, 1, 0.155773, 0.197243, -0.0369872 )
+texture = ExtResource( 10 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 3 )

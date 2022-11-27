@@ -65,10 +65,15 @@ func _physics_process(delta):
 		var angle = (mouse_pos - chara_pos).angle()
 		var shoot_momentum = _shoot_process(angle)
 		arm.rotation = Vector3(0,0, angle)
+		if angle >= -1.5 and angle <= 1.5:
+			arm.scale.y = 1
+		else:
+			arm.scale.y = -1
 		
 		if Input.is_action_just_pressed("Disparo") and hud.reduce_ammo():
 			velocity.x = +shoot_momentum.x
 			velocity.y = +shoot_momentum.y
+			print(angle)
 			_disparo()
 	
 		if is_on_floor() and Input.is_action_just_pressed("jump"):

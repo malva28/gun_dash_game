@@ -28,7 +28,6 @@ func _physics_process(delta):
 						collider._resolve_body_enter(self)
 					queue_free()
 			elif layer>>3==1:
-					print(collision_info.position)
 					var x = transform.origin
 					transform.basis.x = transform.basis.x.bounce(collision_info.normal)
 					transform.basis.y = transform.basis.y.bounce(collision_info.normal)

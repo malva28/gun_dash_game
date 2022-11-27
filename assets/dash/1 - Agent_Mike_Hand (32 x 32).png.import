@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/1 - Agent_Mike_Bullet (16 x 16).png-3d225fb8db56abf522df076cf9f7568e.stex"
+path="res://.import/1 - Agent_Mike_Hand (32 x 32).png-efd84701343dca932169d48084f1aacc.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/dash/1 - Agent_Mike_Bullet (16 x 16).png"
-dest_files=[ "res://.import/1 - Agent_Mike_Bullet (16 x 16).png-3d225fb8db56abf522df076cf9f7568e.stex" ]
+source_file="res://assets/dash/1 - Agent_Mike_Hand (32 x 32).png"
+dest_files=[ "res://.import/1 - Agent_Mike_Hand (32 x 32).png-efd84701343dca932169d48084f1aacc.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=1
