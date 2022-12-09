@@ -19,6 +19,7 @@ onready var arm = $arm
 onready var camera = $Camera
 onready var bullet_spawn = $arm/BulletSpawn
 onready var hud = $Control/hud
+onready var Tombstone = preload("res://scenes/Tombstone.tscn")
 
 
 onready var anim_player = $AnimationPlayer
@@ -49,13 +50,9 @@ func _physics_process(delta):
 	
 	var move_input = Input.get_axis("move_left", "move_right")
 	
-	
-	
 	velocity.y -= GRAVITY  
 	
 	if movement_enabled:
-		velocity.x = move_toward(velocity.x, move_input * SPEED, ACCELERATION * delta)
-		
 		var mouse_pos_viewport = get_viewport().get_mouse_position()
 		var adjusted_pos = camera.project_position(mouse_pos_viewport, z_distance)
 		
@@ -78,31 +75,27 @@ func _physics_process(delta):
 			pivot.scale.x =1
 		if Input.is_action_pressed("move_left") and not Input.is_action_pressed("move_right"):
 			pivot.scale.x =-1
-			
+	else: 
+		velocity.x = 0
+		move_input = 0
 
-	
+	velocity.x = move_toward(velocity.x, move_input * SPEED, ACCELERATION * delta)
 
 	
 	### SI CAE EN UN SPIKE POR ENCIMA RECIBE DAÑO
-#	for i in get_slide_count():
-#		var collision_info = get_slide_collision(i)
-#		if collision_info.collider.has_method("get_collision_layer"):
-#			var layer = collision_info.collider.get_collision_layer()
-#			if layer == 33 and collision_info.normal.y > 0:
-#				print(layer)
-#				print(collision_info.normal.y)
-#				hud.hp -= 1
+	for i in get_slide_count():
+		var collision_info = get_slide_collision(i)
+		if collision_info.collider.has_method("get_collision_layer"):
+			var layer = collision_info.collider.get_collision_layer()
+			if (layer>>5)==1 and collision_info.normal.y > 0.9:
+				velocity.y = 3
+				hud.whole_heart_damage()
+				main_chara_death()
 
 		
 	### SI ESTA EN EL SUELO, RECARGA
 	if is_on_floor():
 		hud.reload_all()
-		
-		
-		
-	
-		
-	
 		
 	### Animation logic
 	if is_on_floor():
@@ -139,11 +132,15 @@ func _disparo():
 func main_chara_death():
 	if hud.current_hp <= 0:
 		movement_enabled = false
-		var gun = get_node("arm/MeshInstance")
+		var gun = get_node("arm")
 		if gun:
 			gun.queue_free()
-		playback.travel("die")
-
+		
+		var tombstone = Tombstone.instance()
+		get_parent().add_child(tombstone)
+		tombstone.global_transform = self.global_transform
+		tombstone.camera.make_current()
+		hide()
 		var t = Timer.new()
 		t.set_wait_time(3)
 		t.set_one_shot(true)
@@ -165,8 +162,7 @@ func save_checkpoint(pos_x, pos_y, pos_z):
 	cp_pos.y = pos_y
 	cp_pos.z = pos_z
 	
-
-
+	
 func die():
 	if hud.current_hp <= 0:
 		get_tree().reload_current_scene()
@@ -179,3 +175,5 @@ func _on_Deathbox_body_entered(body):
 func _resolve_body_enter(body: KinematicBody):
 	if body.has_method("_main_chara_enter"):
 		body._main_chara_enter(self)
+		
+
