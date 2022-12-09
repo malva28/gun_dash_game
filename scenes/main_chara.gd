@@ -111,11 +111,6 @@ func _physics_process(delta):
 		else:
 			playback.travel("jump_fall")
 		
-
-		
-	
-	
-
 func _shoot_process(angle):
 	var y_movement = -1 * SHOOT_ACCEL * sin(angle)
 	var x_movement = -1 * SHOOT_ACCEL * cos(angle)

@@ -15,7 +15,7 @@ func _ready():
 	pass
 	
 func _physics_process(delta):
-	collision_info = move_and_collide(Velocity.normalized()*SPEED)
+	collision_info = move_and_collide(Velocity.normalized()*SPEED*delta)
 	if collision_info!=null:
 		var collider = collision_info.collider
 		var layer = null
