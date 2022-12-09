@@ -16,11 +16,11 @@ func set_hp(value):
 	current_hp = value
 
 var MAX_AMMO = 3
-<<<<<<< HEAD
+
 var ammo_count = MAX_AMMO
-=======
-var ammo_count = 3
->>>>>>> tumbaydemases
+
+
+
 onready var ammo_display = $VBoxContainer/HSplitContainer/ammoDisplay
 onready var hp_display = $VBoxContainer/HSplitContainer/HPDisplay
 

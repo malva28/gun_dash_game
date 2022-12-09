@@ -27,6 +27,8 @@ onready var anim_tree = $AnimationTree
 
 onready var playback = anim_tree.get("parameters/playback")
 
+var dead = false
+
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -130,7 +132,8 @@ func _disparo():
 	#bullet.velocity = get_viewport().get_mouse_position() - bullet.position
 	
 func main_chara_death():
-	if hud.current_hp <= 0:
+	if hud.current_hp <= 0 and !dead:
+		dead = true
 		movement_enabled = false
 		var gun = get_node("arm")
 		if gun:
@@ -175,5 +178,4 @@ func _on_Deathbox_body_entered(body):
 func _resolve_body_enter(body: KinematicBody):
 	if body.has_method("_main_chara_enter"):
 		body._main_chara_enter(self)
-		
 

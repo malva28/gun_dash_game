@@ -24,14 +24,14 @@ func _physics_process(delta):
 		var layer = null
 		if collider.has_method("get_collision_layer"):
 			layer = collider.get_collision_layer()
-			if layer == 1:
+			if layer&1 == 1:
 				print(collider)
 				queue_free()
-			elif layer == 2:
+			if (layer>>1)&1 == 2:
 					if collider.has_method("_resolve_body_enter"):
 						collider._resolve_body_enter(self)
 					queue_free()
-			elif layer>>3==1:
+			if (layer>>3)&1==1:
 					print(collision_info.position)
 					var x = transform.origin
 					transform.basis.x = transform.basis.x.bounce(collision_info.normal)
