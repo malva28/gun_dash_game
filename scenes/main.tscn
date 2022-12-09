@@ -80,7 +80,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.232, -3.52025, 0.317211 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.738561, 0.5, -3.59785 )
 
 [node name="Spike" parent="." instance=ExtResource( 11 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, -4 )
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 5, 0.45291, -4 )
 
 [connection signal="body_entered" from="enemy1" to="MainChara" method="_on_enemy_body_entered"]
 [connection signal="body_entered" from="enemy2" to="MainChara" method="_on_enemy_body_entered"]
