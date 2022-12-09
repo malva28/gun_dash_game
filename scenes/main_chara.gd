@@ -87,8 +87,7 @@ func _physics_process(delta):
 		var collision_info = get_slide_collision(i)
 		if collision_info.collider.has_method("get_collision_layer"):
 			var layer = collision_info.collider.get_collision_layer()
-			print(layer>>5)
-			if (layer>>5)==1 and collision_info.normal.y == 1:
+			if (layer>>5)==1 and collision_info.normal.y > 0.9:
 				velocity.y = 3
 				hud.whole_heart_damage()
 				main_chara_death()
@@ -138,9 +137,8 @@ func main_chara_death():
 		var tombstone = Tombstone.instance()
 		get_parent().add_child(tombstone)
 		tombstone.global_transform = self.global_transform
+		tombstone.camera.make_current()
 		hide()
-		get_parent().remove_child(camera)
-		tombstone.add_child(camera)
 		var t = Timer.new()
 		t.set_wait_time(3)
 		t.set_one_shot(true)
@@ -175,3 +173,5 @@ func _on_Deathbox_body_entered(body):
 func _resolve_body_enter(body: KinematicBody):
 	if body.has_method("_main_chara_enter"):
 		body._main_chara_enter(self)
+		
+

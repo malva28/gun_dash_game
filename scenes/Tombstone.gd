@@ -1,6 +1,7 @@
 extends KinematicBody
 const GRAVITY = 0.1
 const SPEED = 2
+onready var camera = $Camera_Tombstone
 
 var velocity = Vector3()
 # Declare member variables here. Examples:
@@ -20,3 +21,4 @@ func _physics_process(delta):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
