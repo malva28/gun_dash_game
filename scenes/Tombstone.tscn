@@ -106,3 +106,4 @@ anims/RESET = SubResource( 3 )
 
 [node name="Camera_Tombstone" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5 )
+current = true

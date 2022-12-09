@@ -13,6 +13,7 @@ const bulletPath = preload("res://scenes/bullet.tscn")
 
 var z_distance = 4 # distancia de la camara a Z
 var movement_enabled = true
+var dead = false
 
 onready var pivot = $Pivot
 onready var arm = $arm
@@ -134,19 +135,21 @@ func main_chara_death():
 		if gun:
 			gun.queue_free()
 		
-		var tombstone = Tombstone.instance()
-		get_parent().add_child(tombstone)
-		tombstone.global_transform = self.global_transform
-		tombstone.camera.make_current()
-		hide()
-		var t = Timer.new()
-		t.set_wait_time(3)
-		t.set_one_shot(true)
-		self.add_child(t)
-		t.start()
-		yield(t, "timeout")
+		if !dead:
+			dead = true
+			var tombstone = Tombstone.instance()
+			get_parent().add_child(tombstone)
+			tombstone.global_transform = self.global_transform
+			tombstone.camera.make_current()
+			hide()
+			var t = Timer.new()
+			t.set_wait_time(3)
+			t.set_one_shot(true)
+			self.add_child(t)
+			t.start()
+			yield(t, "timeout")
 
-		die()
+			die()
 
 		
 func _resolve_area_enter(area: Area):
