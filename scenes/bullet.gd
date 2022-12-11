@@ -9,11 +9,14 @@ var collisions_left = 6
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-
+var player_instance = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
+	
+func bind_player(player_inst):
+	player_instance = player_inst
 	
 func _physics_process(delta):
 
@@ -42,6 +45,13 @@ func _physics_process(delta):
 
 
 	translation += SPEED * transform.basis.x * delta
+
+func _resolve_area_enter(area: Area):
+	if area.has_method("_bullet_enter"):
+		area._bullet_enter(self)
+
+func _enemy1_enter(enemy1):
+	queue_free()
 
 func _main_chara_enter(main_chara):
 	main_chara.hud.half_heart_damage()
