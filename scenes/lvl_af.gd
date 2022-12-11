@@ -5,13 +5,12 @@ extends Spatial
 # var a = 2
 # var b = "text"
 
-
 onready var dash_chara = $MainChara
+onready var tower = $Tower
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
+	tower.bind_player(dash_chara)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

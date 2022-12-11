@@ -3,6 +3,7 @@ export(PackedScene) var Bullet
 var cp_pos = Vector3(0,2,-4)
 var velocity = Vector3()
 var hp = 3
+var dead = false
 const  ACCELERATION = 10
 const SHOOT_ACCEL = 7
 const SPEED = 2
@@ -10,6 +11,7 @@ const JUMP_SPEED = 2
 const GRAVITY = 0.1
 
 const bulletPath = preload("res://scenes/bullet.tscn")
+const Tombstone = preload("res://scenes/Tombstone.tscn")
 
 var z_distance = 4 # distancia de la camara a Z
 var movement_enabled = true
@@ -137,13 +139,18 @@ func _disparo():
 	#bullet.velocity = get_viewport().get_mouse_position() - bullet.position
 	
 func main_chara_death():
-	if hud.current_hp <= 0:
+	if hud.current_hp <= 0 and !dead:
+		dead = true
 		movement_enabled = false
-		var gun = get_node("arm/MeshInstance")
+		var gun = get_node("arm")
 		if gun:
 			gun.queue_free()
-		playback.travel("die")
-
+		
+		var tombstone = Tombstone.instance()
+		get_parent().add_child(tombstone)
+		tombstone.global_transform = self.global_transform
+		tombstone.camera.make_current()
+		hide()
 		var t = Timer.new()
 		t.set_wait_time(3)
 		t.set_one_shot(true)
