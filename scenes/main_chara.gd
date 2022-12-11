@@ -3,6 +3,7 @@ export(PackedScene) var Bullet
 var cp_pos = Vector3(0,2,-4)
 var velocity = Vector3()
 var hp = 3
+var dead = false
 const  ACCELERATION = 10
 const SHOOT_ACCEL = 7
 const SPEED = 2
@@ -13,7 +14,6 @@ const bulletPath = preload("res://scenes/bullet.tscn")
 
 var z_distance = 4 # distancia de la camara a Z
 var movement_enabled = true
-var dead = false
 
 onready var pivot = $Pivot
 onready var arm = $arm
@@ -41,9 +41,6 @@ func _ready():
 #func _process(delta: float) -> void:
 #	$arm.look_at(get_global_mouse_position())
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
 
 func _physics_process(delta):
 	#time += delta
@@ -86,18 +83,16 @@ func _physics_process(delta):
 
 	velocity.x = move_toward(velocity.x, move_input * SPEED, ACCELERATION * delta)
 
-	
 	### SI CAE EN UN SPIKE POR ENCIMA RECIBE DAÑO
 	for i in get_slide_count():
 		var collision_info = get_slide_collision(i)
 		if collision_info.collider.has_method("get_collision_layer"):
 			var layer = collision_info.collider.get_collision_layer()
-			if (layer>>5)==1 and collision_info.normal.y > 0.9:
+			if (layer>>5)==1 and abs(collision_info.normal.y) > 0.9:
 				velocity.y = 3
 				hud.whole_heart_damage()
 				main_chara_death()
-
-		
+				
 	### SI ESTA EN EL SUELO, RECARGA
 	if is_on_floor():
 		hud.reload_all()
@@ -130,27 +125,25 @@ func _disparo():
 	#bullet.velocity = get_viewport().get_mouse_position() - bullet.position
 	
 func main_chara_death():
-	if hud.current_hp <= 0:
+	if hud.current_hp <= 0 and !dead:
 		movement_enabled = false
 		var gun = get_node("arm")
 		if gun:
 			gun.queue_free()
-		
-		if !dead:
-			dead = true
-			var tombstone = Tombstone.instance()
-			get_parent().add_child(tombstone)
-			tombstone.global_transform = self.global_transform
-			tombstone.camera.make_current()
-			hide()
-			var t = Timer.new()
-			t.set_wait_time(3)
-			t.set_one_shot(true)
-			self.add_child(t)
-			t.start()
-			yield(t, "timeout")
+		dead = true
+		var tombstone = Tombstone.instance()
+		get_parent().add_child(tombstone)
+		tombstone.global_transform = self.global_transform
+		tombstone.camera.make_current()
+		hide()
+		var t = Timer.new()
+		t.set_wait_time(3)
+		t.set_one_shot(true)
+		self.add_child(t)
+		t.start()
+		yield(t, "timeout")
 
-			die()
+		die()
 
 		
 func _resolve_area_enter(area: Area):

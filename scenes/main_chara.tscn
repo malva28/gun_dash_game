@@ -1,4 +1,7 @@
-[gd_scene load_steps=32 format=2]
+
+
+[gd_scene load_steps=36 format=2]
+
 
 [ext_resource path="res://assets/dash/1 - Agent_Mike_Idle (32 x 32).png" type="Texture" id=1]
 [ext_resource path="res://scenes/gun.tscn" type="PackedScene" id=2]
@@ -258,6 +261,9 @@ tracks/2/keys = {
 "values": [ 6 ]
 }
 
+[sub_resource type="AnimationNodeAnimation" id=24]
+animation = "die"
+
 [sub_resource type="AnimationNodeAnimation" id=8]
 animation = "idle"
 
@@ -288,7 +294,18 @@ animation = "run"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=22]
 
+[sub_resource type="AnimationNodeStateMachineTransition" id=25]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=26]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=27]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=28]
+
 [sub_resource type="AnimationNodeStateMachine" id=12]
+states/die/node = SubResource( 24 )
+states/die/position = Vector2( 818.76, 204.487 )
 states/idle/node = SubResource( 8 )
 states/idle/position = Vector2( 260, 111 )
 states/jump_begin/node = SubResource( 14 )
@@ -297,7 +314,7 @@ states/jump_fall/node = SubResource( 15 )
 states/jump_fall/position = Vector2( 640, 289 )
 states/run/node = SubResource( 9 )
 states/run/position = Vector2( 260, 296 )
-transitions = [ "idle", "run", SubResource( 10 ), "run", "idle", SubResource( 11 ), "idle", "jump_begin", SubResource( 16 ), "jump_begin", "jump_fall", SubResource( 17 ), "jump_fall", "idle", SubResource( 18 ), "jump_fall", "run", SubResource( 19 ), "run", "jump_begin", SubResource( 20 ), "idle", "jump_fall", SubResource( 21 ), "run", "jump_fall", SubResource( 22 ) ]
+transitions = [ "idle", "run", SubResource( 10 ), "run", "idle", SubResource( 11 ), "idle", "jump_begin", SubResource( 16 ), "jump_begin", "jump_fall", SubResource( 17 ), "jump_fall", "idle", SubResource( 18 ), "jump_fall", "run", SubResource( 19 ), "run", "jump_begin", SubResource( 20 ), "idle", "jump_fall", SubResource( 21 ), "run", "jump_fall", SubResource( 22 ), "jump_begin", "die", SubResource( 25 ), "idle", "die", SubResource( 26 ), "run", "die", SubResource( 27 ), "jump_fall", "die", SubResource( 28 ) ]
 start_node = "idle"
 graph_offset = Vector2( -231.364, 125.262 )
 
