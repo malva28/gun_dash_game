@@ -11,6 +11,8 @@
 [ext_resource path="res://Deathbox.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/object_heart.tscn" type="PackedScene" id=10]
 [ext_resource path="res://scenes/BatPath.gd" type="Script" id=12]
+[ext_resource path="res://scenes/Spike.tscn" type="PackedScene" id=11]
+
 
 [sub_resource type="BoxShape" id=1]
 
@@ -94,6 +96,9 @@ script = ExtResource( 12 )
 
 [node name="enemy2" parent="Path/BatPath" instance=ExtResource( 5 )]
 transform = Transform( 1, 4.88944e-08, 3.72529e-09, -2.79397e-08, 1, 1.49012e-08, 9.31323e-10, 0, 1, 0, 0, 0 )
+
+[node name="Spike" parent="." instance=ExtResource( 11 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 5, 0.45291, -4 )
 
 [connection signal="body_entered" from="enemy1" to="MainChara" method="_on_enemy_body_entered"]
 [connection signal="body_entered" from="Deathbox" to="MainChara" method="_on_Deathbox_body_entered"]

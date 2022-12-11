@@ -18,7 +18,7 @@ func update_rotation():
 		
 		var curr_vel_x = player_instance.velocity.x
 		var delta_v = chara_pos_x - prev_pos_x 
-		animation_time += delta_v
+		animation_time -= delta_v
 		animation_time = fposmod(animation_time, MAX_ANIM_TIME)
 		
 		prev_pos_x = chara_pos_x 
