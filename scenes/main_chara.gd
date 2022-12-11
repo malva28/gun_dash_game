@@ -14,7 +14,6 @@ const bulletPath = preload("res://scenes/bullet.tscn")
 
 var z_distance = 4 # distancia de la camara a Z
 var movement_enabled = true
-var dead = false
 
 onready var pivot = $Pivot
 onready var arm = $arm
