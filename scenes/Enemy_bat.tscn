@@ -1,14 +1,12 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=38 format=2]
 
-[ext_resource path="res://32x32-bat-sprite.png" type="Texture" id=1]
-[ext_resource path="res://scenes/enemy1.gd" type="Script" id=2]
-[ext_resource path="res://scenes/ui/extra_bullet.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/ui/extra_bullet.tscn" type="PackedScene" id=1]
+[ext_resource path="res://32x32-bat-sprite.png" type="Texture" id=2]
 
-[sub_resource type="CapsuleShape" id=1]
-radius = 0.264208
-height = 0.134656
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 0.179626, 0.221976, 0.6255 )
 
-[sub_resource type="Animation" id=34]
+[sub_resource type="Animation" id=2]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite3D:frame")
@@ -23,7 +21,7 @@ tracks/0/keys = {
 "values": [ 3 ]
 }
 
-[sub_resource type="Animation" id=35]
+[sub_resource type="Animation" id=3]
 resource_name = "d_m"
 length = 0.3
 loop = true
@@ -40,7 +38,7 @@ tracks/0/keys = {
 "values": [ 1, 2, 3 ]
 }
 
-[sub_resource type="Animation" id=36]
+[sub_resource type="Animation" id=4]
 resource_name = "dead_i_d"
 length = 0.3
 tracks/0/type = "value"
@@ -56,7 +54,7 @@ tracks/0/keys = {
 "values": [ 3, 1, 0 ]
 }
 
-[sub_resource type="Animation" id=37]
+[sub_resource type="Animation" id=5]
 resource_name = "dead_l"
 length = 0.3
 tracks/0/type = "value"
@@ -72,7 +70,7 @@ tracks/0/keys = {
 "values": [ 14, 15, 12 ]
 }
 
-[sub_resource type="Animation" id=38]
+[sub_resource type="Animation" id=6]
 resource_name = "dead_r"
 length = 0.3
 tracks/0/type = "value"
@@ -88,7 +86,7 @@ tracks/0/keys = {
 "values": [ 6, 7, 4 ]
 }
 
-[sub_resource type="Animation" id=39]
+[sub_resource type="Animation" id=7]
 resource_name = "dead_u"
 length = 0.3
 tracks/0/type = "value"
@@ -104,7 +102,7 @@ tracks/0/keys = {
 "values": [ 10, 9, 8 ]
 }
 
-[sub_resource type="Animation" id=40]
+[sub_resource type="Animation" id=8]
 resource_name = "idle"
 length = 0.3
 loop = true
@@ -121,7 +119,7 @@ tracks/0/keys = {
 "values": [ 1, 2, 3 ]
 }
 
-[sub_resource type="Animation" id=41]
+[sub_resource type="Animation" id=9]
 resource_name = "l_m"
 length = 0.3
 loop = true
@@ -138,7 +136,7 @@ tracks/0/keys = {
 "values": [ 13, 14, 15 ]
 }
 
-[sub_resource type="Animation" id=42]
+[sub_resource type="Animation" id=10]
 resource_name = "r_m"
 length = 0.3
 loop = true
@@ -155,7 +153,7 @@ tracks/0/keys = {
 "values": [ 5, 6, 7 ]
 }
 
-[sub_resource type="Animation" id=43]
+[sub_resource type="Animation" id=11]
 resource_name = "u_m"
 length = 0.3
 loop = true
@@ -225,7 +223,7 @@ animation = "u_m"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=33]
 
-[sub_resource type="AnimationNodeStateMachine" id=44]
+[sub_resource type="AnimationNodeStateMachine" id=34]
 states/d_m/node = SubResource( 12 )
 states/d_m/position = Vector2( -1036, 95 )
 states/dead_i_d/node = SubResource( 13 )
@@ -246,41 +244,37 @@ states/u_m/node = SubResource( 20 )
 states/u_m/position = Vector2( -640, 158 )
 transitions = [ "idle", "l_m", SubResource( 21 ), "idle", "r_m", SubResource( 22 ), "idle", "u_m", SubResource( 23 ), "r_m", "idle", SubResource( 24 ), "l_m", "idle", SubResource( 25 ), "u_m", "idle", SubResource( 26 ), "idle", "d_m", SubResource( 27 ), "d_m", "idle", SubResource( 28 ), "d_m", "dead_i_d", SubResource( 29 ), "idle", "dead_i_d", SubResource( 30 ), "r_m", "dead_r", SubResource( 31 ), "l_m", "dead_l", SubResource( 32 ), "u_m", "dead_u", SubResource( 33 ) ]
 start_node = "idle"
-graph_offset = Vector2( -1209, -89.8842 )
+graph_offset = Vector2( -1209, -38.2722 )
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=45]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=35]
 
-[node name="enemy1" type="Area"]
-script = ExtResource( 2 )
+[node name="Enemy_bat" type="KinematicBody"]
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0183507, 0, 0 )
 shape = SubResource( 1 )
 
-[node name="ExtraBullet" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0.1 )
-
 [node name="Sprite3D" type="Sprite3D" parent="."]
-pixel_size = 0.02
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 hframes = 4
 vframes = 4
 frame = 3
 
+[node name="ExtraBullet" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0.1 )
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/RESET = SubResource( 34 )
-anims/d_m = SubResource( 35 )
-anims/dead_i_d = SubResource( 36 )
-anims/dead_l = SubResource( 37 )
-anims/dead_r = SubResource( 38 )
-anims/dead_u = SubResource( 39 )
-anims/idle = SubResource( 40 )
-anims/l_m = SubResource( 41 )
-anims/r_m = SubResource( 42 )
-anims/u_m = SubResource( 43 )
+anims/RESET = SubResource( 2 )
+anims/d_m = SubResource( 3 )
+anims/dead_i_d = SubResource( 4 )
+anims/dead_l = SubResource( 5 )
+anims/dead_r = SubResource( 6 )
+anims/dead_u = SubResource( 7 )
+anims/idle = SubResource( 8 )
+anims/l_m = SubResource( 9 )
+anims/r_m = SubResource( 10 )
+anims/u_m = SubResource( 11 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource( 44 )
+tree_root = SubResource( 34 )
 anim_player = NodePath("../AnimationPlayer")
-active = true
-parameters/playback = SubResource( 45 )
+parameters/playback = SubResource( 35 )

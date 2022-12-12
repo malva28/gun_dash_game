@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://scenes/main_chara.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/14-TileSets/tile_2.png" type="Texture" id=2]
@@ -10,7 +10,9 @@
 [ext_resource path="res://checkpoint1.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Deathbox.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/object_heart.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/BatPath.gd" type="Script" id=12]
 [ext_resource path="res://scenes/Spike.tscn" type="PackedScene" id=11]
+
 
 [sub_resource type="BoxShape" id=1]
 
@@ -19,11 +21,17 @@
 [sub_resource type="SpatialMaterial" id=3]
 albedo_texture = ExtResource( 2 )
 
+[sub_resource type="Curve3D" id=4]
+_data = {
+"points": PoolVector3Array( 0, 0, 0, 0, 0, 0, 0.666678, 0.0510805, 0.12056, 0, 0, 0, 0, 0, 0, 0.667857, -0.145688, 0.113943, 0, 0, 0, 0, 0, 0, -0.713184, -0.145688, -0.132118, 0, 0, 0, 0, 0, 0, -0.680169, 0.0496922, -0.119458, 0, 0, 0, 0, 0, 0, 0.666678, 0.0510805, 0.12056 ),
+"tilts": PoolRealArray( 0, 0, 0, 0, 0 )
+}
+
 [node name="Spatial" type="Spatial"]
 script = ExtResource( 7 )
 
 [node name="MainChara" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -4 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.914867, 3.31849, -3.97849 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.15268, 2.45198, -0.637196 )
@@ -42,10 +50,10 @@ mesh = SubResource( 2 )
 material/0 = SubResource( 3 )
 
 [node name="barrel" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.91724, -2.02237, -3.68901 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.98634, -2.02237, -3.68901 )
 
 [node name="enemy1" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.186, 1, -4 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.7993, 4.686, -4 )
 
 [node name="GridMap" type="GridMap" parent="."]
 mesh_library = ExtResource( 6 )
@@ -65,19 +73,29 @@ __meta__ = {
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.20148, -87.0769, -84.5837 )
 
 [node name="checkpoint1" parent="." instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.2121, 1.31322, -4.60985 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 19.364, 1.31322, -4.60985 )
 
 [node name="checkpoint2" parent="." instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.3337, 6.41216, -5.00146 )
-
-[node name="enemy2" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 33.4114, 5.04263, -3.59655 )
 
 [node name="Deathbox" parent="." instance=ExtResource( 9 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.232, -3.52025, 0.317211 )
 
 [node name="Spatial" parent="." instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.738561, 0.5, -3.59785 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.738567, 0.5, -3.59785 )
+
+[node name="Path" type="Path" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.93343, 1.197, -4 )
+curve = SubResource( 4 )
+
+[node name="BatPath" type="PathFollow" parent="Path"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.666678, 0.0510805, 0.12056 )
+rotation_mode = 0
+cubic_interp = false
+script = ExtResource( 12 )
+
+[node name="enemy2" parent="Path/BatPath" instance=ExtResource( 5 )]
+transform = Transform( 1, 4.88944e-08, 3.72529e-09, -2.79397e-08, 1, 1.49012e-08, 9.31323e-10, 0, 1, 0, 0, 0 )
 
 [node name="Spike" parent="." instance=ExtResource( 11 )]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 5, 0.45291, -4 )
@@ -89,5 +107,5 @@ transform = Transform( -2.18557e-08, -0.5, 0, 0.5, -2.18557e-08, 0, 0, 0, 0.5, 4
 transform = Transform( -0.5, 4.37114e-08, 0, -4.37114e-08, -0.5, 0, 0, 0, 0.5, 9.52892, 2.0311, -4 )
 
 [connection signal="body_entered" from="enemy1" to="MainChara" method="_on_enemy_body_entered"]
-[connection signal="body_entered" from="enemy2" to="MainChara" method="_on_enemy_body_entered"]
 [connection signal="body_entered" from="Deathbox" to="MainChara" method="_on_Deathbox_body_entered"]
+[connection signal="body_entered" from="Path/BatPath/enemy2" to="MainChara" method="_on_enemy_body_entered"]

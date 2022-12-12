@@ -16,7 +16,7 @@ func set_hp(value):
 	current_hp = value
 
 var MAX_AMMO = 3
-var ammo_count = 3
+var ammo_count = MAX_AMMO
 onready var ammo_display = $VBoxContainer/HSplitContainer/ammoDisplay
 onready var hp_display = $VBoxContainer/HSplitContainer/HPDisplay
 
@@ -48,6 +48,17 @@ func reduce_ammo():
 		return true
 	else:
 		return false
+
+func reload_one():
+	if ammo_count < MAX_AMMO and not used.empty():
+		var reloaded_bullet = used.pop_back()
+		reloaded_bullet.enable_ammo()
+		remaining.push_back(reloaded_bullet)
+		ammo_count += 1
+		return true
+	else:
+		return false
+		
 
 func reload_all():
 	var n = 0
