@@ -37,4 +37,4 @@ mesh = SubResource( 1 )
 material/0 = SubResource( 4 )
 
 [node name="CollisionPolygon" type="CollisionPolygon" parent="."]
-polygon = PoolVector2Array( 1.61806, -0.304677, 0.804115, 1.32249, -0.837215, 1.31882, -1.64191, -0.289161 )
+polygon = PoolVector2Array( -0.996527, 0.00416619, -0.50189, 0.993441, -0.254571, 0.507963, -0.00267223, 0.99802, 0.249226, 0.507963, 0.501125, 1.0026, 0.995762, 0.0133261 )
