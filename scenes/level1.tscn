@@ -6,7 +6,7 @@
 [ext_resource path="res://scenes/meshes/BasicPlatformingTiles.tres" type="MeshLibrary" id=6]
 [ext_resource path="res://scenes/main.gd" type="Script" id=7]
 [ext_resource path="res://Deathbox.tscn" type="PackedScene" id=9]
-[ext_resource path="res://scenes/Spike.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/spike.tscn" type="PackedScene" id=11]
 
 [node name="Spatial" type="Spatial"]
 script = ExtResource( 7 )
@@ -215,7 +215,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.0306, 16.0175, -3.993 )
 [node name="checkpoint1" parent="." instance=ExtResource( 3 )]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 1, 4.36102, 18.0943, -4.12341 )
 
-[node name="checkpoint2" parent="." instance=ExtResource( 3 )]
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 1, 4.36102, 13.106, -4.12341 )
+[node name="Enemy_bat3" parent="." instance=ExtResource( 2 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 1, 12.006, 14.872, -3.993 )
 
-[connection signal="body_entered" from="Deathbox" to="MainChara" method="_on_Deathbox_body_entered"]

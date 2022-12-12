@@ -8,8 +8,9 @@ var collisions_left = 6
 
 # Declare member variables here. Examples:
 # var a = 2
-# var b = "text"
+# va
 var player_instance = null
+onready var bounce_sfx = $BounceSFX
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -36,6 +37,7 @@ func _physics_process(delta):
 						collider._resolve_body_enter(self)
 					queue_free()
 			if (layer>>3)&1==1:
+					bounce_sfx.play()
 					var x = transform.origin
 					transform.basis.x = transform.basis.x.bounce(collision_info.normal)
 					transform.basis.y = transform.basis.y.bounce(collision_info.normal)
