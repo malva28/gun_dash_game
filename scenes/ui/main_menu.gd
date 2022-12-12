@@ -5,10 +5,14 @@ onready var play = $VBoxContainer/Play
 onready var credits = $VBoxContainer/Credits
 onready var exit = $VBoxContainer/Exit
 
+
 onready var hover_sfx = $HoverSFX
 onready var exit_sfx = $ExitSFX
 onready var play_sfx = $PlaySFX
 onready var normal_sfx =$NormalSFX
+
+var next_scene = preload("res://scenes/main.tscn")
+
 
 
 # Called when the node enters the scene tree for the first time.
@@ -25,7 +29,7 @@ func _ready():
 
 func _on_play_pressed():
 	play_sfx.play()
-	get_tree().change_scene("res://scenes/main.tscn")
+	SceneChange.change_scene(next_scene)
 	
 func _on_exit_pressed():
 	exit_sfx.play()

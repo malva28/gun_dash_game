@@ -42,9 +42,11 @@ func _bullet_enter(bullet: KinematicBody):
 	playback.travel("dead_i_d")
 	yield(extra_bullet.anim_player, "animation_finished")
 	
+
 	if wr.get_ref():
 		if bullet.has_method("_enemy1_enter"):
 			bullet._enemy1_enter(self)
+
 	queue_free()
 		
 func _main_chara_enter(main_chara: KinematicBody):

@@ -3,6 +3,8 @@
 [ext_resource path="res://scenes/main_chara.tscn" type="PackedScene" id=1]
 [ext_resource path="res://checkpoint1.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/enemy1.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/Enemy_bat.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/Goal.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/meshes/BasicPlatformingTiles.tres" type="MeshLibrary" id=6]
 [ext_resource path="res://scenes/main.gd" type="Script" id=7]
 [ext_resource path="res://Deathbox.tscn" type="PackedScene" id=9]
@@ -214,3 +216,9 @@ transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 1, 4.36102, 18.0943, -4.12341
 
 [node name="checkpoint2" parent="." instance=ExtResource( 3 )]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 1, 4.36102, 13.106, -4.12341 )
+
+[node name="Goal" parent="." instance=ExtResource( 3 )]
+transform = Transform( 2.5, 0, 0, 0, 1, 0, 0, 0, 1, 10.1074, 3.6322, -3.95541 )
+
+[connection signal="body_entered" from="Deathbox" to="MainChara" method="_on_Deathbox_body_entered"]
+

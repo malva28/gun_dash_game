@@ -230,8 +230,11 @@ func save_checkpoint(pos_x, pos_y, pos_z):
 	
 func die():
 	if hud.current_hp <= 0:
-		#play_dead_once()
+		SceneChange.fade_out()
+		yield(SceneChange,"faded")
 		get_tree().reload_current_scene()
+		SceneChange.fade_in()
+		
 
 func _on_Deathbox_body_entered(body, dedbox):
 	if body.name == "MainChara":

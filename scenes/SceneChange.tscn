@@ -17,9 +17,8 @@ tracks/0/keys = {
 "values": [ Color( 0, 0, 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=3]
 resource_name = "fade_in"
-length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("ColorRect:modulate")
 tracks/0/interp = 1
@@ -27,15 +26,14 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5 ),
+"times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=2]
 resource_name = "fade_out"
-length = 0.5
 tracks/0/type = "value"
 tracks/0/path = NodePath("ColorRect:modulate")
 tracks/0/interp = 1
@@ -43,10 +41,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5 ),
+"times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
 }
 
 [node name="SceneChange" type="CanvasLayer"]
@@ -62,5 +60,5 @@ color = Color( 0, 0, 0, 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 1 )
-anims/fade_in = SubResource( 2 )
-anims/fade_out = SubResource( 3 )
+anims/fade_in = SubResource( 3 )
+anims/fade_out = SubResource( 2 )
