@@ -1,5 +1,6 @@
 extends Spatial
 
+onready var recover_sfx = $RecoverSFX
 
 
 # Called when the node enters the scene tree for the first time.
@@ -12,4 +13,7 @@ func _on_body_entered(body: Node):
 		
 func _main_chara_enter(main_chara: KinematicBody):
 	# Health recover
-	main_chara.hud.whole_heart_recover()
+	
+	var res = main_chara.hud.whole_heart_recover()
+	if res:
+		recover_sfx.play()

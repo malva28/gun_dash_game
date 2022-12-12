@@ -9,11 +9,15 @@ onready var anim_tree = $AnimationTree
 onready var anim_player = $AnimationPlayer
 onready var extra_bullet = $ExtraBullet
 onready var playback = anim_tree.get("parameters/playback")
+onready var dead_sfx = $DeadSFX
+onready var flap_sfx = $FlapSFX
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	flap_sfx.play()
 	connect("body_entered", self, "_on_body_entered") # Replace with function body.
+	#dead_sfx.play()
 	
 
 func _on_body_entered(body: Node):
@@ -25,6 +29,8 @@ func _resolve_body_enter(body: Node):
 		body._enemy1_enter(self)
 		
 func _bullet_enter(bullet: KinematicBody):
+	flap_sfx.stop()
+	dead_sfx.play()
 	bullet.player_instance.hud.reload_one()
 	extra_bullet.play_extra_ammo_anim_and_despawn()
 	
@@ -32,12 +38,13 @@ func _bullet_enter(bullet: KinematicBody):
 	playback.travel("dead_i_d")
 	yield(extra_bullet.anim_player, "animation_finished")
 	
-	if bullet.has_method("_enemy1_enter"):
+	if bullet and bullet.has_method("_enemy1_enter"):
 		bullet._enemy1_enter(self)
 	queue_free()
 		
 func _main_chara_enter(main_chara: KinematicBody):
 	# Health loss
 	main_chara.hud.whole_heart_damage()
+	main_chara.play_hurt_sfx_once()
 	main_chara.main_chara_death()
 

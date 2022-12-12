@@ -1,7 +1,4 @@
-
-
-[gd_scene load_steps=36 format=2]
-
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://assets/dash/1 - Agent_Mike_Idle (32 x 32).png" type="Texture" id=1]
 [ext_resource path="res://scenes/gun.tscn" type="PackedScene" id=2]
@@ -12,6 +9,12 @@
 [ext_resource path="res://assets/dash/1 - Agent_Mike_Jump_&_Falling (32 x 32).png" type="Texture" id=7]
 [ext_resource path="res://scenes/hud.tscn" type="PackedScene" id=8]
 [ext_resource path="res://assets/dash/1 - Agent_Mike_Hand (32 x 32).png" type="Texture" id=9]
+[ext_resource path="res://assets/sfx/Simple Gunshot 001.wav" type="AudioStream" id=10]
+[ext_resource path="res://assets/sfx/08_landing_on_stone_2.wav" type="AudioStream" id=11]
+[ext_resource path="res://assets/sfx/06_step_stone_1.wav" type="AudioStream" id=12]
+[ext_resource path="res://assets/sfx/Jump 1.wav" type="AudioStream" id=13]
+[ext_resource path="res://assets/sfx/Block Break 1.wav" type="AudioStream" id=14]
+[ext_resource path="res://assets/sfx/hurt_299.wav" type="AudioStream" id=15]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.279511
@@ -377,3 +380,28 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="hud" parent="Control" instance=ExtResource( 8 )]
+
+[node name="FireSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+volume_db = -10.0
+
+[node name="WalkSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+
+[node name="LandSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+
+[node name="JumpSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )
+
+[node name="WalkSFXTimer" type="Timer" parent="."]
+
+[node name="HurtSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 14 )
+volume_db = -5.0
+
+[node name="DieSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 15 )
+
+[node name="cameraFall" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5 )
