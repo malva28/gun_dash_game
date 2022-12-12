@@ -88,8 +88,8 @@ func _physics_process(delta):
 		var collision_info = get_slide_collision(i)
 		if collision_info.collider.has_method("get_collision_layer"):
 			var layer = collision_info.collider.get_collision_layer()
-			if (layer>>5)==1 and abs(collision_info.normal.y) > 0.9:
-				velocity.y = 3
+			if (layer>>5)==1:
+				velocity += 3 * collision_info.normal
 				hud.whole_heart_damage()
 				main_chara_death()
 				
