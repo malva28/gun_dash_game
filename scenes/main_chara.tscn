@@ -1,7 +1,4 @@
-
-
-[gd_scene load_steps=36 format=2]
-
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://assets/dash/1 - Agent_Mike_Idle (32 x 32).png" type="Texture" id=1]
 [ext_resource path="res://scenes/gun.tscn" type="PackedScene" id=2]
@@ -12,6 +9,7 @@
 [ext_resource path="res://assets/dash/1 - Agent_Mike_Jump_&_Falling (32 x 32).png" type="Texture" id=7]
 [ext_resource path="res://scenes/hud.tscn" type="PackedScene" id=8]
 [ext_resource path="res://assets/dash/1 - Agent_Mike_Hand (32 x 32).png" type="Texture" id=9]
+[ext_resource path="res://scenes/ui/Pause_Menu.tscn" type="PackedScene" id=10]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.279511
@@ -377,3 +375,5 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 
 [node name="hud" parent="Control" instance=ExtResource( 8 )]
+
+[node name="Pause_Menu" parent="Control" instance=ExtResource( 10 )]
