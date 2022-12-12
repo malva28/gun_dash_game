@@ -15,6 +15,7 @@ onready var flap_sfx = $FlapSFX
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
 	flap_sfx.play()
 	connect("body_entered", self, "_on_body_entered") # Replace with function body.
 	#dead_sfx.play()
@@ -29,6 +30,8 @@ func _resolve_body_enter(body: Node):
 		body._enemy1_enter(self)
 		
 func _bullet_enter(bullet: KinematicBody):
+	var wr = weakref(bullet);
+	
 	flap_sfx.stop()
 	dead_sfx.play()
 	bullet.player_instance.hud.reload_one()
@@ -39,8 +42,9 @@ func _bullet_enter(bullet: KinematicBody):
 	playback.travel("dead_i_d")
 	yield(extra_bullet.anim_player, "animation_finished")
 	
-	if bullet and bullet.has_method("_enemy1_enter"):
-		bullet._enemy1_enter(self)
+	if wr.get_ref():
+		if bullet.has_method("_enemy1_enter"):
+			bullet._enemy1_enter(self)
 	queue_free()
 		
 func _main_chara_enter(main_chara: KinematicBody):

@@ -209,12 +209,8 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.998, 17.9818, -3.993 )
 [node name="enemy4" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.99229, 14.872, -3.993 )
 
-[node name="enemy5" parent="." instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.0306, 16.0175, -3.993 )
-
 [node name="checkpoint1" parent="." instance=ExtResource( 3 )]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 1, 4.36102, 18.0943, -4.12341 )
 
-[node name="Enemy_bat3" parent="." instance=ExtResource( 2 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 1, 12.006, 14.872, -3.993 )
-
+[node name="checkpoint2" parent="." instance=ExtResource( 3 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 1, 4.36102, 13.106, -4.12341 )
