@@ -1,4 +1,6 @@
+class_name Player
 extends KinematicBody
+
 export(PackedScene) var Bullet
 var cp_pos = Vector3(0,2,-4)
 var velocity = Vector3()

@@ -32,7 +32,7 @@ func _physics_process(delta):
 			layer = collider.get_collision_layer()
 			if layer == 1:
 					queue_free()
-			if (layer>>1)&1 == 2:
+			if (layer>>1)&1 == 1:
 					if collider.has_method("_resolve_body_enter"):
 						collider._resolve_body_enter(self)
 					queue_free()

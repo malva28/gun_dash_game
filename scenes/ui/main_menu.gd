@@ -10,6 +10,7 @@ onready var exit_sfx = $ExitSFX
 onready var play_sfx = $PlaySFX
 onready var normal_sfx =$NormalSFX
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	play.connect("pressed", self, "_on_play_pressed")
@@ -38,3 +39,4 @@ func _on_credits_pressed():
 	
 func _on_hover():
 	hover_sfx.play()
+
