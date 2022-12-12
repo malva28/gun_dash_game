@@ -26,14 +26,13 @@ func _resolve_body_enter(body: Node):
 		
 func _bullet_enter(bullet: KinematicBody):
 	bullet.player_instance.hud.reload_one()
+	bullet.queue_free()
 	extra_bullet.play_extra_ammo_anim_and_despawn()
 	
 	# TODO: agregar animacion de morir del enemigo despues
 	playback.travel("dead_i_d")
 	yield(extra_bullet.anim_player, "animation_finished")
 	
-	if bullet.has_method("_enemy1_enter"):
-		bullet._enemy1_enter(self)
 	queue_free()
 		
 func _main_chara_enter(main_chara: KinematicBody):
