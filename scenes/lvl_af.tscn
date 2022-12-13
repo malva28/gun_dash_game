@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scenes/main_chara.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/MeshLib/Tiles3.tres" type="MeshLibrary" id=2]
@@ -7,12 +7,14 @@
 [ext_resource path="res://scenes/enemy1.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/meshes/tower.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/lvl_af.gd" type="Script" id=7]
+[ext_resource path="res://scenes/ui/Credits.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/Goal.tscn" type="PackedScene" id=9]
 
 [node name="Lvl_af" type="Spatial"]
 script = ExtResource( 7 )
 
 [node name="MainChara" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.019701, 2.98023e-08, 0.0114884 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.019701, 2.98023e-08, -4.40497 )
 
 [node name="GridMap" type="GridMap" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4 )
@@ -194,3 +196,7 @@ transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 1, 2.36058, -18.8152, -4.3097
 
 [node name="Tower" parent="." instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.85041, -93.0527, -64.3797 )
+
+[node name="Goal" parent="." instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.9994, -22.1759, -4.45047 )
+next_level = ExtResource( 8 )
