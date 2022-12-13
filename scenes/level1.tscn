@@ -5,7 +5,7 @@
 [ext_resource path="res://scenes/meshes/BasicPlatformingTiles.tres" type="MeshLibrary" id=6]
 [ext_resource path="res://scenes/main.gd" type="Script" id=7]
 [ext_resource path="res://Deathbox.tscn" type="PackedScene" id=9]
-[ext_resource path="res://scenes/Spike.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/spike.tscn" type="PackedScene" id=11]
 
 [node name="Spatial" type="Spatial"]
 script = ExtResource( 7 )
