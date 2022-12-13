@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://scenes/main_chara.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/14-TileSets/tile_2.png" type="Texture" id=2]
@@ -28,6 +28,8 @@ _data = {
 "tilts": PoolRealArray( 0, 0, 0, 0, 0 )
 }
 
+[sub_resource type="Environment" id=5]
+
 [node name="Spatial" type="Spatial"]
 script = ExtResource( 7 )
 
@@ -36,6 +38,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.914867, 3.31849, -3.97849 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.15268, 2.45198, -0.637196 )
+light_energy = 0.2
 
 [node name="StaticBody" type="StaticBody" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.64395, -2.12115, -4.17495 )
@@ -111,6 +114,9 @@ transform = Transform( -0.5, 4.37114e-08, 0, -4.37114e-08, -0.5, 0, 0, 0, 0.5, 9
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 36.4792, 4.52266, -3.77658 )
 next_level = ExtResource( 13 )
 spawn_point = Vector3( 0, 1.5, -4 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 5 )
 
 [connection signal="body_entered" from="enemy1" to="MainChara" method="_on_enemy_body_entered"]
 [connection signal="body_entered" from="Path/BatPath/enemy2" to="MainChara" method="_on_enemy_body_entered"]

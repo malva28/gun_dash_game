@@ -111,3 +111,6 @@ current = true
 
 [node name="DieSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
+
+[node name="SpotLight" type="SpotLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.94989 )

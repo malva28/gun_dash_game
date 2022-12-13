@@ -408,3 +408,7 @@ stream = ExtResource( 15 )
 
 [node name="cameraFall" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5 )
+
+[node name="SpotLight" type="SpotLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.51815 )
+spot_angle = 71.0927

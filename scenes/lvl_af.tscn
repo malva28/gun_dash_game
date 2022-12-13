@@ -11,6 +11,8 @@
 [ext_resource path="res://scenes/Goal.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Deathbox.tscn" type="PackedScene" id=10]
 
+[sub_resource type="Environment" id=1]
+
 [node name="Lvl_af" type="Spatial"]
 script = ExtResource( 7 )
 
@@ -204,3 +206,10 @@ next_level = ExtResource( 8 )
 
 [node name="Deathbox" parent="." instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.09753, -35.045, -0.163352 )
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 1 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7.70377 )
+light_energy = 0.3
+

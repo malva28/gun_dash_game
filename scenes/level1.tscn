@@ -12,6 +12,8 @@
 [ext_resource path="res://scenes/meshes/tower.tscn" type="PackedScene" id=10]
 [ext_resource path="res://scenes/spike.tscn" type="PackedScene" id=11]
 
+[sub_resource type="Environment" id=1]
+
 [node name="Spatial" type="Spatial"]
 script = ExtResource( 7 )
 
@@ -20,6 +22,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -4 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.1653, 1.71465, -0.316144 )
+light_energy = 0.3
 
 [node name="GridMap" type="GridMap" parent="."]
 mesh_library = ExtResource( 6 )
@@ -234,4 +237,10 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 24, -3.993 )
 transform = Transform( 0.448836, 0, -0.893614, 0, 1, 0, 0.893614, 0, 0.448836, 7.55831, -68.9696, -64.4469 )
 
 [node name="Heart" parent="." instance=ExtResource( 5 )]
+
 transform = Transform( 0.448836, 0, -0.893614, 0, 1, 0, 0.893614, 0, 0.448836, -5.02502, -64.3125, -90.2282 )
+
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 1 )
+
