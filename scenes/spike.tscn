@@ -3,17 +3,17 @@
 [sub_resource type="PrismMesh" id=1]
 
 [sub_resource type="SpatialMaterial" id=2]
-albedo_color = Color( 0.0470588, 1, 0.909804, 1 )
+albedo_color = Color( 0.701961, 0.890196, 0.796078, 1 )
 metallic = 0.33
 metallic_specular = 0.33
 
 [sub_resource type="SpatialMaterial" id=3]
-albedo_color = Color( 0.0470588, 1, 0.909804, 1 )
+albedo_color = Color( 0.701961, 0.890196, 0.796078, 1 )
 metallic = 0.33
 metallic_specular = 0.33
 
 [sub_resource type="SpatialMaterial" id=4]
-albedo_color = Color( 0.0470588, 1, 0.909804, 1 )
+albedo_color = Color( 0.701961, 0.890196, 0.796078, 1 )
 metallic = 0.33
 metallic_specular = 0.33
 

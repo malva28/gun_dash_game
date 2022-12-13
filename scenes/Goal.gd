@@ -4,13 +4,10 @@ export (Vector3) var spawn_point
 
 func _ready():
 	connect("body_entered", self, "_on_Goal_body_entered")
-
-
 #func _on_body_entered(body: Player): 
 #	print(body)
 
 func _on_Goal_body_entered(body):
-	print(body.transform.origin)
 	SceneChange.fade_out()
 	yield(SceneChange,"faded")
 	Checkpoint._update_spawn(spawn_point)
