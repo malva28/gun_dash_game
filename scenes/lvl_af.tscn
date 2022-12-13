@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scenes/main_chara.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/MeshLib/Tiles3.tres" type="MeshLibrary" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://scenes/lvl_af.gd" type="Script" id=7]
 [ext_resource path="res://scenes/ui/Credits.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/Goal.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Deathbox.tscn" type="PackedScene" id=10]
 
 [node name="Lvl_af" type="Spatial"]
 script = ExtResource( 7 )
@@ -200,3 +201,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.85041, -93.0527, -64.3797 )
 [node name="Goal" parent="." instance=ExtResource( 9 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.9994, -22.1759, -4.45047 )
 next_level = ExtResource( 8 )
+
+[node name="Deathbox" parent="." instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.09753, -35.045, -0.163352 )
