@@ -17,3 +17,5 @@ func _main_chara_enter(main_chara: KinematicBody):
 	var res = main_chara.hud.whole_heart_recover()
 	if res:
 		recover_sfx.play()
+		yield(recover_sfx, "finished")
+		queue_free()

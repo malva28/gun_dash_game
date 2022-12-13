@@ -20,7 +20,7 @@ emission_on_uv2 = false
 radius = 0.235467
 height = 0.002
 
-[node name="Spatial" type="Area"]
+[node name="Heart" type="Area"]
 script = ExtResource( 3 )
 
 [node name="MeshInstance" type="MeshInstance" parent="."]

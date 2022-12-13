@@ -108,7 +108,7 @@ func _physics_process(delta):
 		if collision_info.collider.has_method("get_collision_layer"):
 			var layer = collision_info.collider.get_collision_layer()
 			if (layer>>5)==1:
-				play_land_sfx_once()
+				play_hurt_sfx_once()
 				velocity += 3 * collision_info.normal
 				hud.whole_heart_damage()
 				main_chara_death()
