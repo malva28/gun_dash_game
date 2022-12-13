@@ -1,17 +1,13 @@
 extends Spatial
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-onready var dash_chara = $MainChara
+onready var main_chara = $MainChara
 onready var tower = $Tower
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	tower.bind_player(dash_chara)
+onready var deathbox = $Deathbox
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+
+func _ready():
+	deathbox.connect("body_entered", main_chara, "_on_Deathbox_body_entered", [deathbox])
+	tower.bind_player(main_chara)
+
