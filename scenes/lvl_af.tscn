@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scenes/main_chara.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/BasicPlatformTiles Asset/Scenes/MeshLib/Tiles3.tres" type="MeshLibrary" id=2]
@@ -206,10 +206,10 @@ next_level = ExtResource( 8 )
 
 [node name="Deathbox" parent="." instance=ExtResource( 10 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.09753, -35.045, -0.163352 )
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 1 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7.70377 )
 light_energy = 0.3
-

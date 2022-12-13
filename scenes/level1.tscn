@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scenes/main_chara.tscn" type="PackedScene" id=1]
 [ext_resource path="res://checkpoint1.tscn" type="PackedScene" id=2]
@@ -237,10 +237,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 24, -3.993 )
 transform = Transform( 0.448836, 0, -0.893614, 0, 1, 0, 0.893614, 0, 0.448836, 7.55831, -68.9696, -64.4469 )
 
 [node name="Heart" parent="." instance=ExtResource( 5 )]
-
 transform = Transform( 0.448836, 0, -0.893614, 0, 1, 0, 0.893614, 0, 0.448836, -5.02502, -64.3125, -90.2282 )
-
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 1 )
-
