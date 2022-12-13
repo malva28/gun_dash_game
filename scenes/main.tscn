@@ -54,7 +54,7 @@ material/0 = SubResource( 3 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.98634, -2.02237, -3.68901 )
 
 [node name="enemy1" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.7993, 4.686, -4 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 32.9413, 2.88813, -4 )
 
 [node name="GridMap" type="GridMap" parent="."]
 mesh_library = ExtResource( 6 )
@@ -99,13 +99,13 @@ script = ExtResource( 12 )
 transform = Transform( 1, 4.88944e-08, 3.72529e-09, -2.79397e-08, 1, 1.49012e-08, 9.31323e-10, 0, 1, 0, 0, 0 )
 
 [node name="Spike" parent="." instance=ExtResource( 11 )]
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 5, 0.45291, -4 )
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 25.4539, 1.03146, -4 )
 
 [node name="Spike2" parent="." instance=ExtResource( 11 )]
-transform = Transform( -2.18557e-08, -0.5, 0, 0.5, -2.18557e-08, 0, 0, 0, 0.5, 4.00331, 1.69273, -4 )
+transform = Transform( -0.5, 4.37114e-08, 0, -4.37114e-08, -0.5, 0, 0, 0, 0.5, 22.6651, 3.51818, -4 )
 
 [node name="Spike3" parent="." instance=ExtResource( 11 )]
-transform = Transform( -0.5, 4.37114e-08, 0, -4.37114e-08, -0.5, 0, 0, 0, 0.5, 9.52892, 2.0311, -4 )
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 25.4083, 3.27838, -4 )
 
 [node name="Goal" parent="." instance=ExtResource( 14 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 36.4792, 4.52266, -3.77658 )

@@ -10,7 +10,7 @@ onready var quit = $"%Quit"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	resume.connect("pressed", self, "_on:resume")
+	resume.connect("pressed", self, "_on_resume")
 	mainmenu.connect("pressed", self, "_on_mainmenu")
 	quit.connect("pressed", self, "_on_quit")
 	
