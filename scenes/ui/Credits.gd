@@ -77,6 +77,45 @@ func _ready():
 		cr_container.add_child(name_label)
 		cr_container.add_child(auth_label)
 	var h_separator = HSeparator.new()
+	var h_separator1 = HSeparator.new()
+	var h_separator2 = HSeparator.new()
+	var h_separator3 = HSeparator.new()
+	var feli = Label.new()
+	var ato = Label.new()
+	var vale = Label.new()
+	var franz = Label.new()
+	feli.text = "Felipe Borjas"
+	feli.align = Label.ALIGN_CENTER
+	feli.autowrap = true
+	feli.add_color_override("font_color", Color(1,0,1))
+	var based = Label.new()
+	based.text = "Based Team"
+	based.align = Label.ALIGN_CENTER
+	based.autowrap = true
+	based.add_color_override("font_color", Color(0,0,1))
+	ato.text = "Antonio Torga"
+	ato.align = Label.ALIGN_CENTER
+	ato.autowrap = true
+	ato.add_color_override("font_color", Color(1,0,1))
+	vale.text = "Valentina Garrido"
+	vale.align = Label.ALIGN_CENTER
+	vale.autowrap = true
+	vale.add_color_override("font_color", Color(1,0,1))
+	franz.text = "Franz Widerstrom"
+	franz.align = Label.ALIGN_CENTER
+	franz.autowrap = true
+	franz.add_color_override("font_color", Color(1,0,1))
+	cr_container.add_child(h_separator)
+	cr_container.add_child(h_separator1)
+	cr_container.add_child(based)
+	cr_container.add_child(h_separator2)
+	cr_container.add_child(h_separator3)
+	cr_container.add_child(ato)
+	cr_container.add_child(feli)
+	cr_container.add_child(franz)
+	cr_container.add_child(vale)
+	
+	
 	scr_container.scroll_vertical = 0
 	scr_container.connect("scroll_ended", self, "_on_scroll_ended")
 	
