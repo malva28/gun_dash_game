@@ -15,6 +15,7 @@
 [ext_resource path="res://assets/sfx/Jump 1.wav" type="AudioStream" id=13]
 [ext_resource path="res://assets/sfx/Block Break 1.wav" type="AudioStream" id=14]
 [ext_resource path="res://assets/sfx/hurt_299.wav" type="AudioStream" id=15]
+[ext_resource path="res://scenes/ui/Pause_Menu.tscn" type="PackedScene" id=10]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.279511
@@ -405,3 +406,5 @@ stream = ExtResource( 15 )
 
 [node name="cameraFall" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5 )
+
+[node name="Pause_Menu" parent="Control" instance=ExtResource( 10 )]
