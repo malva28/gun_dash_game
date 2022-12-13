@@ -37,6 +37,9 @@ func _on_exit_pressed():
 	get_tree().quit()
 	
 func _on_credits_pressed():
+	normal_sfx.play()
+	yield(normal_sfx, "finished")
+	
 	get_tree().change_scene("res://scenes/ui/Credits.tscn")
 	
 	
