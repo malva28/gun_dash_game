@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Pause_Menu.gd" type="Script" id=1]
 [ext_resource path="res://resources/tema_menu.tres" type="Theme" id=2]
+[ext_resource path="res://assets/sfx/menu_043_exit.wav" type="AudioStream" id=3]
+[ext_resource path="res://assets/sfx/menu_004_cancel.wav" type="AudioStream" id=4]
+[ext_resource path="res://assets/sfx/menu_129_hover.wav" type="AudioStream" id=5]
+[ext_resource path="res://assets/sfx/menu_042_normal_select.wav" type="AudioStream" id=6]
 
 [node name="Pause_Menu" type="MarginContainer"]
 pause_mode = 2
@@ -45,3 +49,15 @@ margin_top = 72.0
 margin_right = 924.0
 margin_bottom = 94.0
 text = "Quit"
+
+[node name="HoverSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+
+[node name="ExitSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+
+[node name="CancelSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+
+[node name="NormalSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
